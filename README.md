@@ -1,2 +1,4 @@
-# Symfony-Beginning
-Learning basics of Symfony framework; Creating a demo CRUD
+Symfony-Beginnin
+================
+
+A Symfony project created on August 20, 2015, 10:39 pm.

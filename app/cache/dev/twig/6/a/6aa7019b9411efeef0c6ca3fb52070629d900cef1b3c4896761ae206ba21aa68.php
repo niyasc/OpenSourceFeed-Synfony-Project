@@ -1,0 +1,105 @@
+<?php
+
+/* OpenSourceFeedBundle:Category:show.html.twig */
+class __TwigTemplate_6aa7019b9411efeef0c6ca3fb52070629d900cef1b3c4896761ae206ba21aa68 extends Twig_Template
+{
+    public function __construct(Twig_Environment $env)
+    {
+        parent::__construct($env);
+
+        // line 1
+        $this->parent = $this->loadTemplate("OpenSourceFeedBundle::base.html.twig", "OpenSourceFeedBundle:Category:show.html.twig", 1);
+        $this->blocks = array(
+            'content' => array($this, 'block_content'),
+        );
+    }
+
+    protected function doGetParent(array $context)
+    {
+        return "OpenSourceFeedBundle::base.html.twig";
+    }
+
+    protected function doDisplay(array $context, array $blocks = array())
+    {
+        $__internal_178dcd492fa994aebfaf834ec09d25997c7735f5f2739cc37fc783658ee30822 = $this->env->getExtension("native_profiler");
+        $__internal_178dcd492fa994aebfaf834ec09d25997c7735f5f2739cc37fc783658ee30822->enter($__internal_178dcd492fa994aebfaf834ec09d25997c7735f5f2739cc37fc783658ee30822_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "OpenSourceFeedBundle:Category:show.html.twig"));
+
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        
+        $__internal_178dcd492fa994aebfaf834ec09d25997c7735f5f2739cc37fc783658ee30822->leave($__internal_178dcd492fa994aebfaf834ec09d25997c7735f5f2739cc37fc783658ee30822_prof);
+
+    }
+
+    // line 3
+    public function block_content($context, array $blocks = array())
+    {
+        $__internal_fa3fee051516148de5bd6fecaf2a7f893bf8b192f03cc000de896d410601684b = $this->env->getExtension("native_profiler");
+        $__internal_fa3fee051516148de5bd6fecaf2a7f893bf8b192f03cc000de896d410601684b->enter($__internal_fa3fee051516148de5bd6fecaf2a7f893bf8b192f03cc000de896d410601684b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+
+        // line 4
+        echo "<h1>";
+        echo twig_escape_filter($this->env, (isset($context["title"]) ? $context["title"] : $this->getContext($context, "title")), "html", null, true);
+        echo "</h1>
+
+    <table class=\"record_properties\">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>";
+        // line 10
+        echo twig_escape_filter($this->env, twig_template_get_attributes($this, (isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id", array()), "html", null, true);
+        echo "</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>";
+        // line 14
+        echo twig_escape_filter($this->env, twig_template_get_attributes($this, (isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "name", array()), "html", null, true);
+        echo "</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class=\"record_actions\">
+    <li>
+        <a href=\"";
+        // line 21
+        echo $this->env->getExtension('routing')->getPath("category");
+        echo "\">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href=\"";
+        // line 26
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("category_edit", array("id" => twig_template_get_attributes($this, (isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id", array()))), "html", null, true);
+        echo "\">
+            Edit
+        </a>
+    </li>
+    <li>";
+        // line 30
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form');
+        echo "</li>
+</ul>
+";
+        
+        $__internal_fa3fee051516148de5bd6fecaf2a7f893bf8b192f03cc000de896d410601684b->leave($__internal_fa3fee051516148de5bd6fecaf2a7f893bf8b192f03cc000de896d410601684b_prof);
+
+    }
+
+    public function getTemplateName()
+    {
+        return "OpenSourceFeedBundle:Category:show.html.twig";
+    }
+
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    public function getDebugInfo()
+    {
+        return array (  82 => 30,  75 => 26,  67 => 21,  57 => 14,  50 => 10,  40 => 4,  34 => 3,  11 => 1,);
+    }
+}
