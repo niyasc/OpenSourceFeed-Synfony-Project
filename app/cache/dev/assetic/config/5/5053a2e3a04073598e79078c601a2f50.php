@@ -2,11 +2,12 @@
 
 // OpenSourceFeedBundle:Category:index.html.twig
 return array (
-  '6f72308' => 
+  '5ef2af1' => 
   array (
     0 => 
     array (
       0 => '@OpenSourceFeedBundle/Resources/public/css/bootstrap.min.css',
+      1 => '@OpenSourceFeedBundle/Resources/public/css/style.css',
     ),
     1 => 
     array (
@@ -14,8 +15,8 @@ return array (
     ),
     2 => 
     array (
-      'output' => '_controller/css/6f72308.css',
-      'name' => '6f72308',
+      'output' => '_controller/css/5ef2af1.css',
+      'name' => '5ef2af1',
       'debug' => NULL,
       'combine' => NULL,
       'vars' => 
@@ -37,6 +38,27 @@ return array (
     array (
       'output' => '_controller/js/13a5ac9.js',
       'name' => '13a5ac9',
+      'debug' => NULL,
+      'combine' => NULL,
+      'vars' => 
+      array (
+      ),
+    ),
+  ),
+  '6f72308' => 
+  array (
+    0 => 
+    array (
+      0 => '@OpenSourceFeedBundle/Resources/public/css/bootstrap.min.css',
+    ),
+    1 => 
+    array (
+      0 => 'cssrewrite',
+    ),
+    2 => 
+    array (
+      'output' => '_controller/css/6f72308.css',
+      'name' => '6f72308',
       'debug' => NULL,
       'combine' => NULL,
       'vars' => 

@@ -1,0 +1,14 @@
+footer {
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+
+@-ms-viewport{
+  width: device-width;
+}
+
+.navbar-inverse .navbar-brand{
+  text-decoration: line-through;
+  text-color: white;
+}

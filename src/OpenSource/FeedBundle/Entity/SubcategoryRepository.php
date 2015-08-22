@@ -12,4 +12,13 @@ use Doctrine\ORM\EntityRepository;
  */
 class SubcategoryRepository extends EntityRepository
 {
+  public function findSubcategroyByCategory($category) {
+    $qb = $this->_em->createQueryBuilder();
+    $qb->select('s')
+        ->from('Subcategory', 's')
+        ->where('s.category.name = :category')
+        ->setParameters(array(':category' => $category));
+
+    return $qb->getQuery()->getArrayResult();
+  }
 }

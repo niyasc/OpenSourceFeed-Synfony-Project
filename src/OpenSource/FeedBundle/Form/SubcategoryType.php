@@ -19,7 +19,7 @@ class SubcategoryType extends AbstractType
             ->add('category')
         ;
     }
-    
+
     /**
      * @param OptionsResolverInterface $resolver
      */

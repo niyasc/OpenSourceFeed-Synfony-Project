@@ -1,0 +1,13 @@
+footer {
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+
+@-ms-viewport{
+  width: device-width;
+}
+
+.navbar-header .navbar-brand a{
+  text-color: white;
+}

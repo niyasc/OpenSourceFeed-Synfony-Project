@@ -25,14 +25,14 @@ class Subcategory
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=32)
+     * @ORM\Column(name="name", type="string", length=32, unique = true)
      */
     private $name;
 
 
     /**
      * @var Category
-     * @ORM\ManyToOne(targetEntity="Category", inversedBy="categories")
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="subcategories")
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id", nullable=false)
      */
     private $category;
@@ -86,7 +86,7 @@ class Subcategory
     /**
      * Get category
      *
-     * @return \OpenSource\FeedBundle\Entity\Category 
+     * @return \OpenSource\FeedBundle\Entity\Category
      */
     public function getCategory()
     {

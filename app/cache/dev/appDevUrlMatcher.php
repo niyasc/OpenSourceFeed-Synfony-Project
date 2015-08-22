@@ -27,15 +27,23 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         $context = $this->context;
         $request = $this->request;
 
-        if (0 === strpos($pathinfo, '/css/6f72308')) {
-            // _assetic_6f72308
-            if ($pathinfo === '/css/6f72308.css') {
-                return array (  '_controller' => 'assetic.controller:render',  'name' => '6f72308',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_6f72308',);
+        if (0 === strpos($pathinfo, '/css/5ef2af1')) {
+            // _assetic_5ef2af1
+            if ($pathinfo === '/css/5ef2af1.css') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => '5ef2af1',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_5ef2af1',);
             }
 
-            // _assetic_6f72308_0
-            if ($pathinfo === '/css/6f72308_bootstrap.min_1.css') {
-                return array (  '_controller' => 'assetic.controller:render',  'name' => '6f72308',  'pos' => 0,  '_format' => 'css',  '_route' => '_assetic_6f72308_0',);
+            if (0 === strpos($pathinfo, '/css/5ef2af1_')) {
+                // _assetic_5ef2af1_0
+                if ($pathinfo === '/css/5ef2af1_bootstrap.min_1.css') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => '5ef2af1',  'pos' => 0,  '_format' => 'css',  '_route' => '_assetic_5ef2af1_0',);
+                }
+
+                // _assetic_5ef2af1_1
+                if ($pathinfo === '/css/5ef2af1_style_2.css') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => '5ef2af1',  'pos' => 1,  '_format' => 'css',  '_route' => '_assetic_5ef2af1_1',);
+                }
+
             }
 
         }
@@ -57,6 +65,19 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     return array (  '_controller' => 'assetic.controller:render',  'name' => '13a5ac9',  'pos' => 1,  '_format' => 'js',  '_route' => '_assetic_13a5ac9_1',);
                 }
 
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/css/6f72308')) {
+            // _assetic_6f72308
+            if ($pathinfo === '/css/6f72308.css') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => '6f72308',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_6f72308',);
+            }
+
+            // _assetic_6f72308_0
+            if ($pathinfo === '/css/6f72308_bootstrap.min_1.css') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => '6f72308',  'pos' => 0,  '_format' => 'css',  '_route' => '_assetic_6f72308_0',);
             }
 
         }
@@ -161,9 +182,9 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        if (0 === strpos($pathinfo, '/category')) {
+        if (0 === strpos($pathinfo, '/software')) {
             // category
-            if (rtrim($pathinfo, '/') === '/category') {
+            if (rtrim($pathinfo, '/') === '/software') {
                 if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'HEAD'));
                     goto not_category;
@@ -178,7 +199,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             not_category:
 
             // category_create
-            if ($pathinfo === '/category/') {
+            if ($pathinfo === '/software/') {
                 if ($this->context->getMethod() != 'POST') {
                     $allow[] = 'POST';
                     goto not_category_create;
@@ -189,7 +210,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             not_category_create:
 
             // category_new
-            if ($pathinfo === '/category/new') {
+            if ($pathinfo === '/software/new') {
                 if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'HEAD'));
                     goto not_category_new;
@@ -199,19 +220,8 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
             not_category_new:
 
-            // category_show
-            if (preg_match('#^/category/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_category_show;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'category_show')), array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\CategoryController::showAction',));
-            }
-            not_category_show:
-
             // category_edit
-            if (preg_match('#^/category/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/software/(?P<name>[^/]++)/edit$#s', $pathinfo, $matches)) {
                 if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'HEAD'));
                     goto not_category_edit;
@@ -222,7 +232,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             not_category_edit:
 
             // category_update
-            if (preg_match('#^/category/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/software/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                 if ($this->context->getMethod() != 'PUT') {
                     $allow[] = 'PUT';
                     goto not_category_update;
@@ -233,7 +243,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             not_category_update:
 
             // category_delete
-            if (preg_match('#^/category/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/software/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                 if ($this->context->getMethod() != 'DELETE') {
                     $allow[] = 'DELETE';
                     goto not_category_delete;
@@ -250,9 +260,9 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'opensource_feed_default_index')), array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\DefaultController::indexAction',));
         }
 
-        if (0 === strpos($pathinfo, '/subcategory')) {
+        if (0 === strpos($pathinfo, '/software')) {
             // subcategory
-            if (rtrim($pathinfo, '/') === '/subcategory') {
+            if (preg_match('#^/software/(?P<category>[^/]++)/?$#s', $pathinfo, $matches)) {
                 if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'HEAD'));
                     goto not_subcategory;
@@ -262,34 +272,34 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     return $this->redirect($pathinfo.'/', 'subcategory');
                 }
 
-                return array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\SubcategoryController::indexAction',  '_route' => 'subcategory',);
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'subcategory')), array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\SubcategoryController::indexAction',));
             }
             not_subcategory:
 
             // subcategory_create
-            if ($pathinfo === '/subcategory/') {
+            if (preg_match('#^/software/(?P<category>[^/]++)/$#s', $pathinfo, $matches)) {
                 if ($this->context->getMethod() != 'POST') {
                     $allow[] = 'POST';
                     goto not_subcategory_create;
                 }
 
-                return array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\SubcategoryController::createAction',  '_route' => 'subcategory_create',);
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'subcategory_create')), array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\SubcategoryController::createAction',));
             }
             not_subcategory_create:
 
             // subcategory_new
-            if ($pathinfo === '/subcategory/new') {
+            if (preg_match('#^/software/(?P<category>[^/]++)/new$#s', $pathinfo, $matches)) {
                 if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'HEAD'));
                     goto not_subcategory_new;
                 }
 
-                return array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\SubcategoryController::newAction',  '_route' => 'subcategory_new',);
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'subcategory_new')), array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\SubcategoryController::newAction',));
             }
             not_subcategory_new:
 
             // subcategory_show
-            if (preg_match('#^/subcategory/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/software/(?P<category>[^/]++)/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
                 if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'HEAD'));
                     goto not_subcategory_show;
@@ -300,7 +310,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             not_subcategory_show:
 
             // subcategory_edit
-            if (preg_match('#^/subcategory/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/software/(?P<category>[^/]++)/(?P<name>[^/]++)/edit$#s', $pathinfo, $matches)) {
                 if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'HEAD'));
                     goto not_subcategory_edit;
@@ -311,7 +321,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             not_subcategory_edit:
 
             // subcategory_update
-            if (preg_match('#^/subcategory/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/software/(?P<category>[^/]++)/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                 if ($this->context->getMethod() != 'PUT') {
                     $allow[] = 'PUT';
                     goto not_subcategory_update;
@@ -322,7 +332,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             not_subcategory_update:
 
             // subcategory_delete
-            if (preg_match('#^/subcategory/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/software/(?P<category>[^/]++)/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
                 if ($this->context->getMethod() != 'DELETE') {
                     $allow[] = 'DELETE';
                     goto not_subcategory_delete;

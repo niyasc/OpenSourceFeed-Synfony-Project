@@ -25,13 +25,13 @@ class Category
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=32)
+     * @ORM\Column(name="name", type="string", length=32, unique=true)
      */
     private $name;
 
     /**
      * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="Subcategory", mappedBy="category")
+     * @ORM\OneToMany(targetEntity="Subcategory", mappedBy="category", cascade={"remove"}, orphanRemoval = true)
      *
      */
     private $subcategories;
