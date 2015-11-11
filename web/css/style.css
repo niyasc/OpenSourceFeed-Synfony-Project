@@ -1,0 +1,20 @@
+/*INCLUDE FONTS */
+@font-face {
+  font-family: Roboto;
+  src: url('fonts/Roboto-Light.ttf');
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #FAFAFA;
+}
+
+footer {
+  background: black;
+  color: white;
+  text-align: center;
+  height: 40px;
+  font-size: 14px;
+  padding-top: 10px;
+  background: #33363B;
+}

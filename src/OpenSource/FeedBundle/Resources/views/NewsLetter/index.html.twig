@@ -1,0 +1,25 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+<h2>NewsLetter list</h2>
+<ul>
+{% for entity in entities %}
+<li>
+  <a href="{{entity.link}}" target="_blank">
+    {{entity.name}} <a href="{{ path('newsletter_edit', { 'id': entity.id }) }}">edit</a>
+  </a>
+</li>
+
+
+{% endfor %}
+</ul>
+
+
+<ul>
+  <li>
+    <a href="{{ path('newsletter_new') }}">
+      Create a new entry
+    </a>
+  </li>
+</ul>
+{% endblock %}

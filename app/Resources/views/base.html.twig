@@ -1,13 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+  <meta charset="UTF-8" />
+  <title>{% block title %}OpenSourceFeed - Stories of Free/Open Source Technologies{% endblock %}</title>
+  {% block stylesheets %}
+  <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+  <link rel="stylesheet" href="{{ asset('css/bootstrap-theme.min.css') }}" />
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+
+  {% endblock %}
+  <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+  {% block body %}
+  {% block header %}
+  <header>
+    <h1>OpenSourceFeed</h1>
+  </header>
+  {% endblock %}
+  {% block content %}
+  {% endblock %}
+  {% block footer %}
+  <footer>
+    &copy; OpenSourceFeeder 2014-2015
+  </footer>
+  {% endblock %}
+  {% endblock %}
+{% block javascripts %}{% endblock %}
+</body>
 </html>
