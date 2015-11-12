@@ -17,11 +17,29 @@ class NewsLetterType extends AbstractType
     $builder
     ->add('name', 'text', array(
       'required' => TRUE,
+      'attr' => array(
+        'id' => 'name',
+        'class' => 'form-control'
+      ),
+      'label_attr' => array(
+        'for' => 'name'
+      )
     ))
     ->add('link', 'text', array(
       'required' => TRUE,
+      'attr' => array(
+        'id' => 'link',
+        'class' => 'form-control'
+      ),
+      'label_attr' => array(
+        'for' => 'link'
+      )
     ))
-    ->add('submit', 'submit')
+    ->add('submit', 'submit', array(
+      'attr' => array(
+        'class' => 'btn btn-primary btn-sm custom-btn'
+      )
+    ))
     ;
   }
 

@@ -1,7 +1,7 @@
 /*INCLUDE FONTS */
 @font-face {
   font-family: Roboto;
-  src: url('fonts/Roboto-Light.ttf');
+  src: url('../fonts/Roboto-Regular.ttf');
 }
 
 body {
@@ -111,6 +111,29 @@ nav li a:hover{
 .custom-btn:hover {
   background: black;
 }
+
+.pagination li a{
+  color: #33363B;
+}
+.pagination li a:hover{
+  color: black;
+}
+.pagination > .active > span {
+  background: #33363B;
+  border-color: #33363B;
+}
+.pagination > .active > span:hover {
+  background: black;
+  border-color: black;
+}
+.form-control {
+  max-width: 300px;
+  margin: auto;
+}
+input[type="text"] {
+  border-radius: 0;
+}
+
 /*Changing News Letter Entry Color*/
 td a {
   color: #33363B;

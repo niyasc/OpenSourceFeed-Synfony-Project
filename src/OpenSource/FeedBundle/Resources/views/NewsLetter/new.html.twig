@@ -1,32 +1,30 @@
 {% extends '::base.html.twig' %}
 
 {% block content -%}
-<h1>NewsLetter creation</h1>
+<h2>ADD NEWS LETTER</h2>
 {{ form_start(form)}}
-<div>
+<div class="form-group">
   {{ form_errors(form.name) }}
   {{ form_errors(form.link) }}
 </div>
-<div>
+<div class="form-group">
   {{ form_label(form.name) }}
   {{ form_widget(form.name) }}
 </div>
 
-<div>
+<div class="form-group">
   {{ form_label(form.link) }}
   {{ form_widget(form.link) }}
 </div>
 
-<div>
+<div class="form-group">
   {{ form_widget(form.submit) }}
 </div>
 
 {{ form_end(form) }}
-<ul class="record_actions">
-  <li>
-    <a href="{{ path('newsletter') }}">
+
+    <a class="btn btn-primary btn-sm custom-btn" href="{{ path('newsletter') }}">
       Back to the list
     </a>
-  </li>
-</ul>
+
 {% endblock %}

@@ -2,8 +2,11 @@
 
 {% block content %}
 <h2>Open Source News Letters</h2>
+<a class="btn btn-primary btn-sm custom-btn" href="{{ path('newsletter_new') }}">
+  NEW ENTRY
+</a>
 <table class="table table-condensed table-custom">
-  {% for entity in entities %}
+  {% for entity in pagination %}
   <tr>
     <td>
       <a href="{{entity.link}}" target="_blank">
@@ -18,11 +21,8 @@
 
 {% endfor %}
 </table>
-
-
-
-<a class="btn btn-primary btn-sm custom-btn" href="{{ path('newsletter_new') }}">
-  NEW ENTRY
-</a>
+<div class="navigation">
+  {{ knp_pagination_render(pagination) }}
+</div>
 
 {% endblock %}

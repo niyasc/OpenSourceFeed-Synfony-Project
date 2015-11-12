@@ -1,3 +1,4 @@
+# This file is auto-generated during the composer install
 parameters:
     database_host: 127.0.0.1
     database_port: null
@@ -9,5 +10,3 @@ parameters:
     mailer_user: null
     mailer_password: null
     secret: 59a6c800dd5e9298b018bd28fce36feaddae0915
-    database_driver: pdo_mysql
-    database_path: null
