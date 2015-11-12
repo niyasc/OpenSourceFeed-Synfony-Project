@@ -22,8 +22,8 @@ class __TwigTemplate_0530f17b7b101d275aa5daf74e91098c63bd4d04bdde28c470c20299137
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_acce9ae77c5d857fcfda82035b9b6aca4dd5a965ae7fa9197a414ae63b8743d1 = $this->env->getExtension("native_profiler");
-        $__internal_acce9ae77c5d857fcfda82035b9b6aca4dd5a965ae7fa9197a414ae63b8743d1->enter($__internal_acce9ae77c5d857fcfda82035b9b6aca4dd5a965ae7fa9197a414ae63b8743d1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::base.html.twig"));
+        $__internal_acfae206e928881ea80986b7dca2178d90ecf499557e57dcf25b57d1a79be3c5 = $this->env->getExtension("native_profiler");
+        $__internal_acfae206e928881ea80986b7dca2178d90ecf499557e57dcf25b57d1a79be3c5->enter($__internal_acfae206e928881ea80986b7dca2178d90ecf499557e57dcf25b57d1a79be3c5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::base.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -42,38 +42,39 @@ class __TwigTemplate_0530f17b7b101d275aa5daf74e91098c63bd4d04bdde28c470c20299137
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("favicon.ico"), "html", null, true);
         echo "\" />
 </head>
-<body>
+<body class=\"container-fluid\">
   ";
         // line 15
         $this->displayBlock('body', $context, $blocks);
-        // line 29
+        // line 48
+        echo "  ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 30
+        // line 52
         echo "</body>
 </html>
 ";
         
-        $__internal_acce9ae77c5d857fcfda82035b9b6aca4dd5a965ae7fa9197a414ae63b8743d1->leave($__internal_acce9ae77c5d857fcfda82035b9b6aca4dd5a965ae7fa9197a414ae63b8743d1_prof);
+        $__internal_acfae206e928881ea80986b7dca2178d90ecf499557e57dcf25b57d1a79be3c5->leave($__internal_acfae206e928881ea80986b7dca2178d90ecf499557e57dcf25b57d1a79be3c5_prof);
 
     }
 
     // line 5
     public function block_title($context, array $blocks = array())
     {
-        $__internal_f7df3e794087323d794ecce49179c2a3dadaee8dc20c79a0e0bc31612bd7ab98 = $this->env->getExtension("native_profiler");
-        $__internal_f7df3e794087323d794ecce49179c2a3dadaee8dc20c79a0e0bc31612bd7ab98->enter($__internal_f7df3e794087323d794ecce49179c2a3dadaee8dc20c79a0e0bc31612bd7ab98_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_964f615f4547a17851a9389cb75b09125387fce0c2a0a46910a8eb2665aa4bb7 = $this->env->getExtension("native_profiler");
+        $__internal_964f615f4547a17851a9389cb75b09125387fce0c2a0a46910a8eb2665aa4bb7->enter($__internal_964f615f4547a17851a9389cb75b09125387fce0c2a0a46910a8eb2665aa4bb7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo "OpenSourceFeed - Stories of Free/Open Source Technologies";
         
-        $__internal_f7df3e794087323d794ecce49179c2a3dadaee8dc20c79a0e0bc31612bd7ab98->leave($__internal_f7df3e794087323d794ecce49179c2a3dadaee8dc20c79a0e0bc31612bd7ab98_prof);
+        $__internal_964f615f4547a17851a9389cb75b09125387fce0c2a0a46910a8eb2665aa4bb7->leave($__internal_964f615f4547a17851a9389cb75b09125387fce0c2a0a46910a8eb2665aa4bb7_prof);
 
     }
 
     // line 6
     public function block_stylesheets($context, array $blocks = array())
     {
-        $__internal_5d7b774027ef8b55d75be06a5f725fd689802d225c864e6e29ea58be39596053 = $this->env->getExtension("native_profiler");
-        $__internal_5d7b774027ef8b55d75be06a5f725fd689802d225c864e6e29ea58be39596053->enter($__internal_5d7b774027ef8b55d75be06a5f725fd689802d225c864e6e29ea58be39596053_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_3a16ae574000597f520f18d4b7e1c90da5fb01f4080b10298221dfbb18c8d5a4 = $this->env->getExtension("native_profiler");
+        $__internal_3a16ae574000597f520f18d4b7e1c90da5fb01f4080b10298221dfbb18c8d5a4->enter($__internal_3a16ae574000597f520f18d4b7e1c90da5fb01f4080b10298221dfbb18c8d5a4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
         // line 7
         echo "  <link rel=\"stylesheet\" href=\"";
@@ -90,85 +91,115 @@ class __TwigTemplate_0530f17b7b101d275aa5daf74e91098c63bd4d04bdde28c470c20299137
 
   ";
         
-        $__internal_5d7b774027ef8b55d75be06a5f725fd689802d225c864e6e29ea58be39596053->leave($__internal_5d7b774027ef8b55d75be06a5f725fd689802d225c864e6e29ea58be39596053_prof);
+        $__internal_3a16ae574000597f520f18d4b7e1c90da5fb01f4080b10298221dfbb18c8d5a4->leave($__internal_3a16ae574000597f520f18d4b7e1c90da5fb01f4080b10298221dfbb18c8d5a4_prof);
 
     }
 
     // line 15
     public function block_body($context, array $blocks = array())
     {
-        $__internal_7bf6f747a7d35f9d38e6ac286e1cc4fa3c7b272417f2d488ad3eab94823e19d2 = $this->env->getExtension("native_profiler");
-        $__internal_7bf6f747a7d35f9d38e6ac286e1cc4fa3c7b272417f2d488ad3eab94823e19d2->enter($__internal_7bf6f747a7d35f9d38e6ac286e1cc4fa3c7b272417f2d488ad3eab94823e19d2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_442b210fc8907b17c98d6340abc1adbe992d357424edd3e8eaa48e3b3b051e5f = $this->env->getExtension("native_profiler");
+        $__internal_442b210fc8907b17c98d6340abc1adbe992d357424edd3e8eaa48e3b3b051e5f->enter($__internal_442b210fc8907b17c98d6340abc1adbe992d357424edd3e8eaa48e3b3b051e5f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 16
         echo "  ";
         $this->displayBlock('header', $context, $blocks);
-        // line 21
-        echo "  ";
+        // line 38
+        echo "  <div class=\"content\">
+    ";
+        // line 39
         $this->displayBlock('content', $context, $blocks);
-        // line 23
-        echo "  ";
+        // line 41
+        echo "  </div>
+  ";
+        // line 42
         $this->displayBlock('footer', $context, $blocks);
-        // line 28
+        // line 47
         echo "  ";
         
-        $__internal_7bf6f747a7d35f9d38e6ac286e1cc4fa3c7b272417f2d488ad3eab94823e19d2->leave($__internal_7bf6f747a7d35f9d38e6ac286e1cc4fa3c7b272417f2d488ad3eab94823e19d2_prof);
+        $__internal_442b210fc8907b17c98d6340abc1adbe992d357424edd3e8eaa48e3b3b051e5f->leave($__internal_442b210fc8907b17c98d6340abc1adbe992d357424edd3e8eaa48e3b3b051e5f_prof);
 
     }
 
     // line 16
     public function block_header($context, array $blocks = array())
     {
-        $__internal_4ed66b3dad0065b74b0826c1257c98fc8b185286caf598c517e5bd7eba110a4d = $this->env->getExtension("native_profiler");
-        $__internal_4ed66b3dad0065b74b0826c1257c98fc8b185286caf598c517e5bd7eba110a4d->enter($__internal_4ed66b3dad0065b74b0826c1257c98fc8b185286caf598c517e5bd7eba110a4d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "header"));
+        $__internal_15745fb24546f27a1f181a03f23aaf48ad816f5c49e42f950bce7b6084c8cd7a = $this->env->getExtension("native_profiler");
+        $__internal_15745fb24546f27a1f181a03f23aaf48ad816f5c49e42f950bce7b6084c8cd7a->enter($__internal_15745fb24546f27a1f181a03f23aaf48ad816f5c49e42f950bce7b6084c8cd7a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "header"));
 
         // line 17
         echo "  <header>
-    <h1>OpenSourceFeed</h1>
+    <a href=\"<?=site_url()?>\">
+      <h1>OpenSourceFeed</h1>
+    </a>
+    <p>
+      Stories of Free/Open Source Technologies
+    </p>
   </header>
+  <div id=\"menu-btn\">
+    &#9776; MENU
+  </div>
+  <nav>
+    <ul>
+      <li><a href=\"#\">Home</a></li>
+      <li><a href=\"#\">Review</a></li>
+      <li><a href=\"#\">News</a></li>
+      <li><a href=\"#\">Tutorials</a></li>
+      <li><a href=\"#\">About</a></li>
+    </ul>
+  </nav>
   ";
         
-        $__internal_4ed66b3dad0065b74b0826c1257c98fc8b185286caf598c517e5bd7eba110a4d->leave($__internal_4ed66b3dad0065b74b0826c1257c98fc8b185286caf598c517e5bd7eba110a4d_prof);
+        $__internal_15745fb24546f27a1f181a03f23aaf48ad816f5c49e42f950bce7b6084c8cd7a->leave($__internal_15745fb24546f27a1f181a03f23aaf48ad816f5c49e42f950bce7b6084c8cd7a_prof);
 
     }
 
-    // line 21
+    // line 39
     public function block_content($context, array $blocks = array())
     {
-        $__internal_63c64a9526e8078b56d0873b1ac436313d9624a17c79830a6d3e127953dd8651 = $this->env->getExtension("native_profiler");
-        $__internal_63c64a9526e8078b56d0873b1ac436313d9624a17c79830a6d3e127953dd8651->enter($__internal_63c64a9526e8078b56d0873b1ac436313d9624a17c79830a6d3e127953dd8651_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_df9924bdef7c9465bb144ac5a2821c8570ee83d18051184f323463b0aa1b5b39 = $this->env->getExtension("native_profiler");
+        $__internal_df9924bdef7c9465bb144ac5a2821c8570ee83d18051184f323463b0aa1b5b39->enter($__internal_df9924bdef7c9465bb144ac5a2821c8570ee83d18051184f323463b0aa1b5b39_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
-        // line 22
-        echo "  ";
+        // line 40
+        echo "    ";
         
-        $__internal_63c64a9526e8078b56d0873b1ac436313d9624a17c79830a6d3e127953dd8651->leave($__internal_63c64a9526e8078b56d0873b1ac436313d9624a17c79830a6d3e127953dd8651_prof);
+        $__internal_df9924bdef7c9465bb144ac5a2821c8570ee83d18051184f323463b0aa1b5b39->leave($__internal_df9924bdef7c9465bb144ac5a2821c8570ee83d18051184f323463b0aa1b5b39_prof);
 
     }
 
-    // line 23
+    // line 42
     public function block_footer($context, array $blocks = array())
     {
-        $__internal_6de4071e634530fb0c2a09ee5c8ec8fe43b9d3819265f8a3e984cd3267eff581 = $this->env->getExtension("native_profiler");
-        $__internal_6de4071e634530fb0c2a09ee5c8ec8fe43b9d3819265f8a3e984cd3267eff581->enter($__internal_6de4071e634530fb0c2a09ee5c8ec8fe43b9d3819265f8a3e984cd3267eff581_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "footer"));
+        $__internal_1856f0f195118fc754b9af4a3cf860f43e99b52e2b3851c0e62bf7aaa1a5f3dc = $this->env->getExtension("native_profiler");
+        $__internal_1856f0f195118fc754b9af4a3cf860f43e99b52e2b3851c0e62bf7aaa1a5f3dc->enter($__internal_1856f0f195118fc754b9af4a3cf860f43e99b52e2b3851c0e62bf7aaa1a5f3dc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 24
+        // line 43
         echo "  <footer>
     &copy; OpenSourceFeeder 2014-2015
   </footer>
   ";
         
-        $__internal_6de4071e634530fb0c2a09ee5c8ec8fe43b9d3819265f8a3e984cd3267eff581->leave($__internal_6de4071e634530fb0c2a09ee5c8ec8fe43b9d3819265f8a3e984cd3267eff581_prof);
+        $__internal_1856f0f195118fc754b9af4a3cf860f43e99b52e2b3851c0e62bf7aaa1a5f3dc->leave($__internal_1856f0f195118fc754b9af4a3cf860f43e99b52e2b3851c0e62bf7aaa1a5f3dc_prof);
 
     }
 
-    // line 29
+    // line 48
     public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_f8143f15b6c4994e41af7236103ae472d9e15e0c93740f20cd71e8814f02bd0c = $this->env->getExtension("native_profiler");
-        $__internal_f8143f15b6c4994e41af7236103ae472d9e15e0c93740f20cd71e8814f02bd0c->enter($__internal_f8143f15b6c4994e41af7236103ae472d9e15e0c93740f20cd71e8814f02bd0c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_b7b534d15b7cdcc83bb0a8e1eb5686990cb9b70405eca53dca4e22db375243c2 = $this->env->getExtension("native_profiler");
+        $__internal_b7b534d15b7cdcc83bb0a8e1eb5686990cb9b70405eca53dca4e22db375243c2->enter($__internal_b7b534d15b7cdcc83bb0a8e1eb5686990cb9b70405eca53dca4e22db375243c2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
+        // line 49
+        echo "  <script type=\"text/javascript\" src=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/jquery.min.js"), "html", null, true);
+        echo "\"></script>
+  <script type=\"text/javascript\" src=\"";
+        // line 50
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("js/script.js"), "html", null, true);
+        echo "\"></script>
+  ";
         
-        $__internal_f8143f15b6c4994e41af7236103ae472d9e15e0c93740f20cd71e8814f02bd0c->leave($__internal_f8143f15b6c4994e41af7236103ae472d9e15e0c93740f20cd71e8814f02bd0c_prof);
+        $__internal_b7b534d15b7cdcc83bb0a8e1eb5686990cb9b70405eca53dca4e22db375243c2->leave($__internal_b7b534d15b7cdcc83bb0a8e1eb5686990cb9b70405eca53dca4e22db375243c2_prof);
 
     }
 
@@ -184,7 +215,7 @@ class __TwigTemplate_0530f17b7b101d275aa5daf74e91098c63bd4d04bdde28c470c20299137
 
     public function getDebugInfo()
     {
-        return array (  165 => 29,  155 => 24,  149 => 23,  142 => 22,  136 => 21,  126 => 17,  120 => 16,  113 => 28,  110 => 23,  107 => 21,  104 => 16,  98 => 15,  88 => 9,  84 => 8,  79 => 7,  73 => 6,  61 => 5,  52 => 30,  50 => 29,  48 => 15,  41 => 12,  39 => 6,  35 => 5,  29 => 1,);
+        return array (  198 => 50,  193 => 49,  187 => 48,  177 => 43,  171 => 42,  164 => 40,  158 => 39,  131 => 17,  125 => 16,  118 => 47,  116 => 42,  113 => 41,  111 => 39,  108 => 38,  105 => 16,  99 => 15,  89 => 9,  85 => 8,  80 => 7,  74 => 6,  62 => 5,  53 => 52,  50 => 48,  48 => 15,  41 => 12,  39 => 6,  35 => 5,  29 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -200,22 +231,44 @@ class __TwigTemplate_0530f17b7b101d275aa5daf74e91098c63bd4d04bdde28c470c20299137
 /*   {% endblock %}*/
 /*   <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />*/
 /* </head>*/
-/* <body>*/
+/* <body class="container-fluid">*/
 /*   {% block body %}*/
 /*   {% block header %}*/
 /*   <header>*/
-/*     <h1>OpenSourceFeed</h1>*/
+/*     <a href="<?=site_url()?>">*/
+/*       <h1>OpenSourceFeed</h1>*/
+/*     </a>*/
+/*     <p>*/
+/*       Stories of Free/Open Source Technologies*/
+/*     </p>*/
 /*   </header>*/
+/*   <div id="menu-btn">*/
+/*     &#9776; MENU*/
+/*   </div>*/
+/*   <nav>*/
+/*     <ul>*/
+/*       <li><a href="#">Home</a></li>*/
+/*       <li><a href="#">Review</a></li>*/
+/*       <li><a href="#">News</a></li>*/
+/*       <li><a href="#">Tutorials</a></li>*/
+/*       <li><a href="#">About</a></li>*/
+/*     </ul>*/
+/*   </nav>*/
 /*   {% endblock %}*/
-/*   {% block content %}*/
-/*   {% endblock %}*/
+/*   <div class="content">*/
+/*     {% block content %}*/
+/*     {% endblock %}*/
+/*   </div>*/
 /*   {% block footer %}*/
 /*   <footer>*/
 /*     &copy; OpenSourceFeeder 2014-2015*/
 /*   </footer>*/
 /*   {% endblock %}*/
 /*   {% endblock %}*/
-/* {% block javascripts %}{% endblock %}*/
+/*   {% block javascripts %}*/
+/*   <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>*/
+/*   <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>*/
+/*   {% endblock %}*/
 /* </body>*/
 /* </html>*/
 /* */

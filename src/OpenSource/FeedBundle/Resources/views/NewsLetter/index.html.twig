@@ -1,25 +1,28 @@
 {% extends '::base.html.twig' %}
 
 {% block content %}
-<h2>NewsLetter list</h2>
-<ul>
-{% for entity in entities %}
-<li>
-  <a href="{{entity.link}}" target="_blank">
-    {{entity.name}} <a href="{{ path('newsletter_edit', { 'id': entity.id }) }}">edit</a>
-  </a>
-</li>
+<h2>Open Source News Letters</h2>
+<table class="table table-condensed table-custom">
+  {% for entity in entities %}
+  <tr>
+    <td>
+      <a href="{{entity.link}}" target="_blank">
+        {{entity.name}}
+      </a>
+    </td>
+    <td>
+      <a class="btn btn-sm btn-primary custom-btn" href="{{ path('newsletter_edit', { 'id': entity.id }) }}">EDIT</a>
+    </td>
+  </tr>
 
 
 {% endfor %}
-</ul>
+</table>
 
 
-<ul>
-  <li>
-    <a href="{{ path('newsletter_new') }}">
-      Create a new entry
-    </a>
-  </li>
-</ul>
+
+<a class="btn btn-primary btn-sm custom-btn" href="{{ path('newsletter_new') }}">
+  NEW ENTRY
+</a>
+
 {% endblock %}

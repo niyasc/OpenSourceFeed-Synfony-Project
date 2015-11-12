@@ -11,21 +11,43 @@
   {% endblock %}
   <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
-<body>
+<body class="container-fluid">
   {% block body %}
   {% block header %}
   <header>
-    <h1>OpenSourceFeed</h1>
+    <a href="<?=site_url()?>">
+      <h1>OpenSourceFeed</h1>
+    </a>
+    <p>
+      Stories of Free/Open Source Technologies
+    </p>
   </header>
+  <div id="menu-btn">
+    &#9776; MENU
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Review</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">Tutorials</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </nav>
   {% endblock %}
-  {% block content %}
-  {% endblock %}
+  <div class="content">
+    {% block content %}
+    {% endblock %}
+  </div>
   {% block footer %}
   <footer>
     &copy; OpenSourceFeeder 2014-2015
   </footer>
   {% endblock %}
   {% endblock %}
-{% block javascripts %}{% endblock %}
+  {% block javascripts %}
+  <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
+  {% endblock %}
 </body>
 </html>

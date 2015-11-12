@@ -9,12 +9,168 @@ body {
   background: #FAFAFA;
 }
 
-footer {
+html,
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #FAFAFA;
+}
+
+header, footer, nav {
+  /*max-width: 1140px;*/
+  margin-top: 0px;
+  margin: auto;
+  background: white;
+  box-shadow: 0px 0px 2px black;
+}
+
+/*header*/
+header {
+
+  margin-top: 0px;
+  background: #33363B;
+  min-height: auto !important;
+  height: 140px;
+}
+
+header h1 {
+  padding: 20px;
+  color: white;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+header a {
+  text-decoration: none;
+}
+
+header p {
+  padding: 20px;
+  padding-top: 0px;
+  margin-top: 0px;
+  color: white;
+}
+
+/*Navigation Bar*/
+#menu-btn {
+  background: #33363B;
+  color: white;
+  text-align: center;
+  margin: 0px;
+  height: 32px;
+  padding-top: 10px;
+  display: none;
+}
+nav {
+  background: #33363B;
+  height: 40px;
+}
+nav.visible {
+  display: block;
+}
+
+nav li {
+  display: inline;
+}
+
+nav ul {
+  list-style-type: none;
+  padding-top: 10px;
+  padding-left: 0px;
+  margin: 0px;
+}
+
+
+nav li a{
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+
+nav li a:hover{
+  background: white;
+  color: black;
+}
+
+/*Components*/
+.table > tbody > tr > td{
+  border: 0px;
+}
+.custom-btn {
+  background: #33363B;
+  border: 0px;
+  border-radius: 0px;
+}
+
+.custom-btn:hover {
   background: black;
+}
+/*Changing News Letter Entry Color*/
+td a {
+  color: #33363B;
+}
+td a:hover{
+  color: black;
+}
+/*footer*/
+footer {
   color: white;
   text-align: center;
   height: 40px;
-  font-size: 14px;
-  padding-top: 10px;
+  padding-top: 12px;
   background: #33363B;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.content {
+  margin: auto;
+  text-align: center;
+  background: white;
+}
+
+/*Responsive Design*/
+@media (max-width: 400px) {
+
+  header {
+    text-align: center;
+    height: auto;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  #menu-btn {
+    display: block;
+  }
+
+  nav {
+    height: auto;
+    text-align: center;
+    display: none;
+  }
+
+  nav ul {
+    width: 100%;
+  }
+  nav li {
+    width: 100%;
+    display: block;
+  }
+
+  nav li a {
+    display: block;
+  }
+
+}
+
+@media (max-width: 300px) {
+  header h1 {
+    font-size: 20px;
+  }
 }
