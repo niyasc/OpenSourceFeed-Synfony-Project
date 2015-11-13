@@ -35,6 +35,12 @@
     </ul>
   </nav>
   {% endblock %}
+  {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+  <div class="admin-panel">
+    Hi, {{ app.user.username }}
+    <a class="btn btn-sm btn-primary custom-btn" href="{{ path('logout') }}">Logout</a>
+  </div>
+  {% endif %}
   <div class="content">
     {% block content %}
     {% endblock %}
@@ -43,11 +49,11 @@
   <footer>
     &copy; OpenSourceFeeder 2014-2015
   </footer>
-  {% endblock %}
-  {% endblock %}
-  {% block javascripts %}
-  <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
-  {% endblock %}
+{% endblock %}
+{% endblock %}
+{% block javascripts %}
+<script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
+{% endblock %}
 </body>
 </html>

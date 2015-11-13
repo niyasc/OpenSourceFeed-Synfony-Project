@@ -6,3 +6,5 @@ open_source_feed:
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+logout:
+    path: /logout

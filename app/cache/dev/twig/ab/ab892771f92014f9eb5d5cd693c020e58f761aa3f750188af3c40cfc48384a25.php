@@ -21,20 +21,20 @@ class __TwigTemplate_b3a4f6b471d3e0a89cc1e1445b209ee4b9787dd8925e9651355494adf10
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_557e45cd23aa6624ece7deb02ce2895e4982410c687c0cce2c0a1ba6d2cc717d = $this->env->getExtension("native_profiler");
-        $__internal_557e45cd23aa6624ece7deb02ce2895e4982410c687c0cce2c0a1ba6d2cc717d->enter($__internal_557e45cd23aa6624ece7deb02ce2895e4982410c687c0cce2c0a1ba6d2cc717d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "OpenSourceFeedBundle:NewsLetter:edit.html.twig"));
+        $__internal_b7219a54c1c00f573afb1e2ad128beb59327510a2cc304d28fbcc4d90d2cc2c7 = $this->env->getExtension("native_profiler");
+        $__internal_b7219a54c1c00f573afb1e2ad128beb59327510a2cc304d28fbcc4d90d2cc2c7->enter($__internal_b7219a54c1c00f573afb1e2ad128beb59327510a2cc304d28fbcc4d90d2cc2c7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "OpenSourceFeedBundle:NewsLetter:edit.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_557e45cd23aa6624ece7deb02ce2895e4982410c687c0cce2c0a1ba6d2cc717d->leave($__internal_557e45cd23aa6624ece7deb02ce2895e4982410c687c0cce2c0a1ba6d2cc717d_prof);
+        $__internal_b7219a54c1c00f573afb1e2ad128beb59327510a2cc304d28fbcc4d90d2cc2c7->leave($__internal_b7219a54c1c00f573afb1e2ad128beb59327510a2cc304d28fbcc4d90d2cc2c7_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_89e2e80402518ecec83a2d44e4fea96ba89cabcc0516499ea7504cedbf241bc1 = $this->env->getExtension("native_profiler");
-        $__internal_89e2e80402518ecec83a2d44e4fea96ba89cabcc0516499ea7504cedbf241bc1->enter($__internal_89e2e80402518ecec83a2d44e4fea96ba89cabcc0516499ea7504cedbf241bc1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_4875c70de035b875d3589820fdb2ea79d7a32081f88dad1a2549dc20d81acb11 = $this->env->getExtension("native_profiler");
+        $__internal_4875c70de035b875d3589820fdb2ea79d7a32081f88dad1a2549dc20d81acb11->enter($__internal_4875c70de035b875d3589820fdb2ea79d7a32081f88dad1a2549dc20d81acb11_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "<h1>NewsLetter edit</h1>
@@ -60,7 +60,7 @@ class __TwigTemplate_b3a4f6b471d3e0a89cc1e1445b209ee4b9787dd8925e9651355494adf10
 </ul>
 ";
         
-        $__internal_89e2e80402518ecec83a2d44e4fea96ba89cabcc0516499ea7504cedbf241bc1->leave($__internal_89e2e80402518ecec83a2d44e4fea96ba89cabcc0516499ea7504cedbf241bc1_prof);
+        $__internal_4875c70de035b875d3589820fdb2ea79d7a32081f88dad1a2549dc20d81acb11->leave($__internal_4875c70de035b875d3589820fdb2ea79d7a32081f88dad1a2549dc20d81acb11_prof);
 
     }
 

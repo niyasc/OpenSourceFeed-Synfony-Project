@@ -49,6 +49,8 @@ class NewsLetterController extends Controller
 */
 public function createAction(Request $request)
 {
+  $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
+
   $entity = new NewsLetter();
   $form = $this->createCreateForm($entity);
   $form->handleRequest($request);
@@ -95,6 +97,7 @@ private function createCreateForm(NewsLetter $entity)
 */
 public function newAction()
 {
+  $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
   $entity = new NewsLetter();
   $form   = $this->createCreateForm($entity);
 
@@ -113,6 +116,7 @@ public function newAction()
 */
 public function showAction($id)
 {
+  $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
   $em = $this->getDoctrine()->getManager();
 
   $entity = $em->getRepository('OpenSourceFeedBundle:NewsLetter')->find($id);
@@ -138,6 +142,7 @@ public function showAction($id)
 */
 public function editAction($id)
 {
+  $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
   $em = $this->getDoctrine()->getManager();
 
   $entity = $em->getRepository('OpenSourceFeedBundle:NewsLetter')->find($id);
@@ -183,6 +188,7 @@ private function createEditForm(NewsLetter $entity)
 */
 public function updateAction(Request $request, $id)
 {
+  $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
   $em = $this->getDoctrine()->getManager();
 
   $entity = $em->getRepository('OpenSourceFeedBundle:NewsLetter')->find($id);
@@ -215,6 +221,7 @@ public function updateAction(Request $request, $id)
 */
 public function deleteAction(Request $request, $id)
 {
+  $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
   $form = $this->createDeleteForm($id);
   $form->handleRequest($request);
 

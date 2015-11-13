@@ -98,6 +98,14 @@ nav li a:hover{
   color: black;
 }
 
+/*Admin Panel*/
+.admin-panel {
+  background: #33363B;
+  color: white;
+  text-align: right;
+  margin-top: 5px;
+}
+
 /*Components*/
 .table-custom {
   max-width: 50%;
