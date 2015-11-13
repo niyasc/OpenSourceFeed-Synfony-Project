@@ -99,8 +99,16 @@ nav li a:hover{
 }
 
 /*Components*/
-.table > tbody > tr > td{
-  border: 0px;
+.table-custom {
+  max-width: 50%;
+  margin: auto;
+  text-align: justify;
+}
+.table {
+  margin-top: 20px;
+}
+.table-custom > tbody > tr > td{
+  /*border: 0px;*/
 }
 .custom-btn {
   background: #33363B;
@@ -154,8 +162,8 @@ footer {
 
 .content {
   margin: auto;
-  text-align: center;
   background: white;
+  text-align: center;
 }
 
 /*Responsive Design*/

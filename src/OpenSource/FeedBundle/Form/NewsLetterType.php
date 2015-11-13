@@ -35,11 +35,7 @@ class NewsLetterType extends AbstractType
         'for' => 'link'
       )
     ))
-    ->add('submit', 'submit', array(
-      'attr' => array(
-        'class' => 'btn btn-primary btn-sm custom-btn'
-      )
-    ))
+    
     ;
   }
 
