@@ -127,6 +127,90 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/category')) {
+            // category
+            if (rtrim($pathinfo, '/') === '/category') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_category;
+                }
+
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'category');
+                }
+
+                return array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\CategoryController::indexAction',  '_route' => 'category',);
+            }
+            not_category:
+
+            // category_create
+            if ($pathinfo === '/category/') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_category_create;
+                }
+
+                return array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\CategoryController::createAction',  '_route' => 'category_create',);
+            }
+            not_category_create:
+
+            // category_new
+            if ($pathinfo === '/category/new') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_category_new;
+                }
+
+                return array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\CategoryController::newAction',  '_route' => 'category_new',);
+            }
+            not_category_new:
+
+            // category_show
+            if (preg_match('#^/category/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_category_show;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'category_show')), array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\CategoryController::showAction',));
+            }
+            not_category_show:
+
+            // category_edit
+            if (preg_match('#^/category/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_category_edit;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'category_edit')), array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\CategoryController::editAction',));
+            }
+            not_category_edit:
+
+            // category_update
+            if (preg_match('#^/category/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'PUT') {
+                    $allow[] = 'PUT';
+                    goto not_category_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'category_update')), array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\CategoryController::updateAction',));
+            }
+            not_category_update:
+
+            // category_delete
+            if (preg_match('#^/category/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'DELETE') {
+                    $allow[] = 'DELETE';
+                    goto not_category_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'category_delete')), array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\CategoryController::deleteAction',));
+            }
+            not_category_delete:
+
+        }
+
         // opensource_feed_default_index
         if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'opensource_feed_default_index')), array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\DefaultController::indexAction',));

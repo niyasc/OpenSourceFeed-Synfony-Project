@@ -1,0 +1,27 @@
+{% extends '::base.html.twig' %}
+
+{% block content -%}
+<h2>ADD CATEGORY</h2>
+
+{{ form_start(form)}}
+{% if form_errors(form.name) %}
+<div class="alert alert-danger" role="alert">
+  {{ form_errors(form.name) }}
+</div>
+{% endif %}
+<div class="form-group">
+  {{ form_label(form.name) }}
+  {{ form_widget(form.name) }}
+</div>
+<div class="form-group">
+  {{ form_widget(form.submit, {attr: {'class': 'btn btn-primary btn-sm custom-btn'}, label: 'SAVE'})}}
+</div>
+{{ form_end(form)}}
+
+
+<a href="{{ path('category') }}" class="btn btn-primary btn-sm custom-btn">
+  CANCEL
+</a>
+  </li>
+</ul>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends '::base.html.twig' %}
+
+{% block content -%}
+<h2>CATEGORY DETAILS</h2>
+
+<table class="table table-bordered table-striped table-custom">
+  <tr>
+    <td>ID</td>
+    <td>{{ entity.id }}</td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td>{{ entity.name }}</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center">
+      <a href="{{ path('category') }}" class="btn btn-primary btn-sm custom-btn">
+        BACK
+      </a>
+      <a href="{{ path('category_edit', { 'id': entity.id }) }}" class="btn btn-primary btn-sm custom-btn">
+        EDIT
+      </a>
+      {{form_start(delete_form, {attr: {'style': 'display: inline', 'onsubmit': 'return confirm("Are You Sure?")'}})}}
+      {{form_widget(delete_form.submit, {attr: {'class': 'btn btn-primary btn-sm custom-btn'}})}}
+      {{form_end(delete_form)}}
+
+    </td>
+  </tr>
+</table>
+{% endblock %}

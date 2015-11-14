@@ -129,6 +129,11 @@ nav li a:hover{
   background: black;
 }
 
+table .custom-btn {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .pagination li a{
   color: #33363B;
 }
