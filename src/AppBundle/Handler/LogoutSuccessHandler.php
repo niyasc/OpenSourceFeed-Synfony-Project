@@ -10,9 +10,10 @@ class LogoutSuccessHandler extends ContainerAware implements LogoutSuccessHandle
 {
   public function onLogoutSuccess(Request $request)
   {
-    // dynamic route logic
-
-    return new RedirectResponse($this->container->get('router')->generate('dynamic_route_name'));
+    $target_url = $request->query->get('target_url')
+    ? $request->query->get('target_url')
+    : "/";
+    return new RedirectResponse($target_url);
   }
 }
 ?>

@@ -38,7 +38,7 @@
   {% if is_granted('IS_AUTHENTICATED_FULLY') %}
   <div class="admin-panel">
     Hi, {{ app.user.username }}
-    <a class="btn btn-sm btn-primary custom-btn" href="{{ path('logout') }}">Logout</a>
+    <a class="btn btn-sm btn-primary custom-btn" href="{{ path('logout', {'target_url': app.request.uri}) }}">Logout</a>
   </div>
   {% endif %}
   <div class="content">
