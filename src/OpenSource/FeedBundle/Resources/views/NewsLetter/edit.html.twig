@@ -1,16 +1,33 @@
 {% extends '::base.html.twig' %}
 
-{% block body -%}
-    <h1>NewsLetter edit</h1>
+{% block content -%}
+<h2>EDIT NEWS LETTER</h2>
 
-    {{ form(edit_form) }}
+{{ form_start(edit_form) }}
+{% if form_errors(edit_form.name) or  form_errors(edit_form.link) %}
+<div class="alert alert-danger" role="alert">
+  {{ form_errors(edit_form.name) }}
+  {{ form_errors(edit_form.link) }}
+</div>
+{% endif %}
+<div class="form-group">
+  {{ form_label(edit_form.name) }}
+  {{ form_widget(edit_form.name) }}
+</div>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('newsletter') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+<div class="form-group">
+  {{ form_label(edit_form.link) }}
+  {{ form_widget(edit_form.link) }}
+</div>
+<div class="form-group">
+{{ form_widget(edit_form.submit, {'label' : 'EDIT ENTRY', 'attr' : {'class' : 'btn btn-primary btn-sm custom-btn'}} )}}
+</div>
+
+{{ form_end(edit_form) }}
+
+
+<a class='btn btn-primary btn-sm custom-btn' href="{{ path('newsletter') }}">
+  CANCEL
+</a>
+
 {% endblock %}

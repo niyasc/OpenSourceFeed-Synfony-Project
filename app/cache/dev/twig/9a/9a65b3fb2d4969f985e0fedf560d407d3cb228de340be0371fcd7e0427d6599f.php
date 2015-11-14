@@ -21,20 +21,20 @@ class __TwigTemplate_26b9b4d4dc33339bb2ed02a36bf89bbee2eb9718f3c2c698ec052279f3c
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_846336f46c23f370f6d4bb6348d6d7292dbddcd73d9597c8c9ffb5517e006e51 = $this->env->getExtension("native_profiler");
-        $__internal_846336f46c23f370f6d4bb6348d6d7292dbddcd73d9597c8c9ffb5517e006e51->enter($__internal_846336f46c23f370f6d4bb6348d6d7292dbddcd73d9597c8c9ffb5517e006e51_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "OpenSourceFeedBundle:NewsLetter:new.html.twig"));
+        $__internal_3bd2eaaab0a52e5ec39a6ff5f441e73bdf4ed2f2b40e09f83f6e1ba7640e41ec = $this->env->getExtension("native_profiler");
+        $__internal_3bd2eaaab0a52e5ec39a6ff5f441e73bdf4ed2f2b40e09f83f6e1ba7640e41ec->enter($__internal_3bd2eaaab0a52e5ec39a6ff5f441e73bdf4ed2f2b40e09f83f6e1ba7640e41ec_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "OpenSourceFeedBundle:NewsLetter:new.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_846336f46c23f370f6d4bb6348d6d7292dbddcd73d9597c8c9ffb5517e006e51->leave($__internal_846336f46c23f370f6d4bb6348d6d7292dbddcd73d9597c8c9ffb5517e006e51_prof);
+        $__internal_3bd2eaaab0a52e5ec39a6ff5f441e73bdf4ed2f2b40e09f83f6e1ba7640e41ec->leave($__internal_3bd2eaaab0a52e5ec39a6ff5f441e73bdf4ed2f2b40e09f83f6e1ba7640e41ec_prof);
 
     }
 
     // line 3
     public function block_content($context, array $blocks = array())
     {
-        $__internal_a6b09c3be8f8e025a7233bd6de6a5c413c6b2d2d761c2abac0cf80ced2c7c81e = $this->env->getExtension("native_profiler");
-        $__internal_a6b09c3be8f8e025a7233bd6de6a5c413c6b2d2d761c2abac0cf80ced2c7c81e->enter($__internal_a6b09c3be8f8e025a7233bd6de6a5c413c6b2d2d761c2abac0cf80ced2c7c81e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_b4b51356accb838f913dfed27a9406ff101304964fd0ca0583bdba7a1dd1452f = $this->env->getExtension("native_profiler");
+        $__internal_b4b51356accb838f913dfed27a9406ff101304964fd0ca0583bdba7a1dd1452f->enter($__internal_b4b51356accb838f913dfed27a9406ff101304964fd0ca0583bdba7a1dd1452f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 4
         echo "<h2>ADD NEWS LETTER</h2>
@@ -42,51 +42,59 @@ class __TwigTemplate_26b9b4d4dc33339bb2ed02a36bf89bbee2eb9718f3c2c698ec052279f3c
         // line 5
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start');
         echo "
-<div class=\"form-group\">
+";
+        // line 6
+        if (($this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "name", array()), 'errors') || $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "link", array()), 'errors'))) {
+            // line 7
+            echo "<div class=\"alert alert-danger\" role=\"alert\">
   ";
-        // line 7
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "name", array()), 'errors');
-        echo "
+            // line 8
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "name", array()), 'errors');
+            echo "
   ";
-        // line 8
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "link", array()), 'errors');
-        echo "
+            // line 9
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "link", array()), 'errors');
+            echo "
 </div>
+";
+        }
+        // line 12
+        echo "
 <div class=\"form-group\">
   ";
-        // line 11
+        // line 14
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "name", array()), 'label');
         echo "
   ";
-        // line 12
+        // line 15
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "name", array()), 'widget');
         echo "
 </div>
 
 <div class=\"form-group\">
   ";
-        // line 16
+        // line 19
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "link", array()), 'label');
         echo "
   ";
-        // line 17
+        // line 20
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "link", array()), 'widget');
         echo "
 </div>
 <div class=\"form-group\">
 ";
-        // line 20
+        // line 23
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "submit", array()), 'widget', array("label" => "ADD ENTRY", "attr" => array("class" => "btn btn-primary btn-sm custom-btn")));
         echo "
 </div>
 
 ";
-        // line 23
+        // line 26
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
 
 <a class=\"btn btn-primary btn-sm custom-btn\" href=\"";
-        // line 25
+        // line 28
         echo $this->env->getExtension('routing')->getPath("newsletter");
         echo "\">
   CANCEL
@@ -94,7 +102,7 @@ class __TwigTemplate_26b9b4d4dc33339bb2ed02a36bf89bbee2eb9718f3c2c698ec052279f3c
 
 ";
         
-        $__internal_a6b09c3be8f8e025a7233bd6de6a5c413c6b2d2d761c2abac0cf80ced2c7c81e->leave($__internal_a6b09c3be8f8e025a7233bd6de6a5c413c6b2d2d761c2abac0cf80ced2c7c81e_prof);
+        $__internal_b4b51356accb838f913dfed27a9406ff101304964fd0ca0583bdba7a1dd1452f->leave($__internal_b4b51356accb838f913dfed27a9406ff101304964fd0ca0583bdba7a1dd1452f_prof);
 
     }
 
@@ -110,7 +118,7 @@ class __TwigTemplate_26b9b4d4dc33339bb2ed02a36bf89bbee2eb9718f3c2c698ec052279f3c
 
     public function getDebugInfo()
     {
-        return array (  90 => 25,  85 => 23,  79 => 20,  73 => 17,  69 => 16,  62 => 12,  58 => 11,  52 => 8,  48 => 7,  43 => 5,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  98 => 28,  93 => 26,  87 => 23,  81 => 20,  77 => 19,  70 => 15,  66 => 14,  62 => 12,  56 => 9,  52 => 8,  49 => 7,  47 => 6,  43 => 5,  40 => 4,  34 => 3,  11 => 1,);
     }
 }
 /* {% extends '::base.html.twig' %}*/
@@ -118,10 +126,13 @@ class __TwigTemplate_26b9b4d4dc33339bb2ed02a36bf89bbee2eb9718f3c2c698ec052279f3c
 /* {% block content -%}*/
 /* <h2>ADD NEWS LETTER</h2>*/
 /* {{ form_start(form)}}*/
-/* <div class="form-group">*/
+/* {% if form_errors(form.name) or  form_errors(form.link) %}*/
+/* <div class="alert alert-danger" role="alert">*/
 /*   {{ form_errors(form.name) }}*/
 /*   {{ form_errors(form.link) }}*/
 /* </div>*/
+/* {% endif %}*/
+/* */
 /* <div class="form-group">*/
 /*   {{ form_label(form.name) }}*/
 /*   {{ form_widget(form.name) }}*/

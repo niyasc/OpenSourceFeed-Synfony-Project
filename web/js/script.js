@@ -15,7 +15,7 @@ $(document).ready(function () {
 
   /*Make nav menu visible on expanding window */
   $(window).resize(function() {
-    if($(window).width() > 400) {
+    if($(window).width() > 460) {
       $('nav').css('display', 'block');
     } else {
       $('nav').css('display', 'none');

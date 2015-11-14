@@ -3,10 +3,13 @@
 {% block content -%}
 <h2>ADD NEWS LETTER</h2>
 {{ form_start(form)}}
-<div class="form-group">
+{% if form_errors(form.name) or  form_errors(form.link) %}
+<div class="alert alert-danger" role="alert">
   {{ form_errors(form.name) }}
   {{ form_errors(form.link) }}
 </div>
+{% endif %}
+
 <div class="form-group">
   {{ form_label(form.name) }}
   {{ form_widget(form.name) }}

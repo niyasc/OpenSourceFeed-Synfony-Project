@@ -87,7 +87,7 @@ nav ul {
 }
 
 
-nav li a{
+nav li a, nav li a:focus{
   color: white;
   text-decoration: none;
   padding: 10px;
@@ -108,7 +108,7 @@ nav li a:hover{
 
 /*Components*/
 .table-custom {
-  max-width: 50%;
+  max-width: 640px;
   margin: auto;
   text-align: justify;
 }
@@ -122,6 +122,7 @@ nav li a:hover{
   background: #33363B;
   border: 0px;
   border-radius: 0px;
+  margin: 5px;
 }
 
 .custom-btn:hover {
@@ -175,7 +176,7 @@ footer {
 }
 
 /*Responsive Design*/
-@media (max-width: 400px) {
+@media (max-width: 460px) {
 
   header {
     text-align: center;

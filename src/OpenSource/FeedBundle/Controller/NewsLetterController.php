@@ -204,7 +204,7 @@ public function updateAction(Request $request, $id)
   if ($editForm->isValid()) {
     $em->flush();
 
-    return $this->redirect($this->generateUrl('newsletter_edit', array('id' => $id)));
+    return $this->redirect($this->generateUrl('newsletter_show', array('id' => $id)));
   }
 
   return array(
@@ -252,7 +252,7 @@ private function createDeleteForm($id)
   return $this->createFormBuilder()
   ->setAction($this->generateUrl('newsletter_delete', array('id' => $id)))
   ->setMethod('DELETE')
-  ->add('submit', 'submit', array('label' => 'Delete'))
+  ->add('submit', 'submit', array('label' => 'DELETE'))
   ->getForm()
   ;
 }
