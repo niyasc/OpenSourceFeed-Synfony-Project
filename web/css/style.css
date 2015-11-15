@@ -203,6 +203,11 @@ blockquote {
   border: 0;
   font-size: 15px;
 }
+
+/*Comments*/
+.comment-message {
+  margin-top: 10px; 
+}
 /*Responsive Design*/
 @media (max-width: 460px) {
 

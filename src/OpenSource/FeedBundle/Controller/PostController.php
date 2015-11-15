@@ -9,6 +9,9 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use OpenSource\FeedBundle\Entity\Post;
 use OpenSource\FeedBundle\Form\PostType;
+use OpenSource\FeedBundle\Form\CommentType;
+use OpenSource\FeedBundle\Controller\CommentController as CommentController;
+use OpenSource\FeedBundle\Entity\Comment;
 
 /**
 * Post controller.
@@ -111,6 +114,9 @@ class PostController extends Controller
   */
   public function showAction($id, $slug)
   {
+
+
+
     $em = $this->getDoctrine()->getManager();
 
     $entity = $em->getRepository('OpenSourceFeedBundle:Post')->find($id);
@@ -124,6 +130,7 @@ class PostController extends Controller
     return array(
       'entity'      => $entity,
       'delete_form' => $deleteForm->createView(),
+      'comment_form' => $this -> createCommentForm(new Comment())->createView()
     );
   }
 
@@ -246,5 +253,24 @@ class PostController extends Controller
     ->add('submit', 'submit', array('label' => 'Delete'))
     ->getForm()
     ;
+  }
+
+  /**
+  * Creates a form to create a Comment entity.
+  *
+  * @param Comment $entity The entity
+  *
+  * @return \Symfony\Component\Form\Form The form
+  */
+  private function createCommentForm(Comment $entity)
+  {
+    $form = $this->createForm(new CommentType(), $entity, array(
+      'action' => $this->generateUrl('comment_create'),
+      'method' => 'POST',
+    ));
+
+    $form->add('submit', 'submit', array('label' => 'Create'));
+
+    return $form;
   }
 }

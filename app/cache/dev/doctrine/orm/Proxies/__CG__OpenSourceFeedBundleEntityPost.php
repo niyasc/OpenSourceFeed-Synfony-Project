@@ -64,10 +64,10 @@ class Post extends \OpenSource\FeedBundle\Entity\Post implements \Doctrine\ORM\P
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'id', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'title', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'date', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'preText', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'summary', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'link', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'category', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'comments');
+            return array('__isInitialized__', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'id', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'slug', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'title', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'date', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'preText', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'postText', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'summary', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'link', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'category', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'comments');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'id', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'title', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'date', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'preText', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'summary', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'link', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'category', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'comments');
+        return array('__isInitialized__', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'id', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'slug', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'title', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'date', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'preText', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'postText', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'summary', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'link', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'category', '' . "\0" . 'OpenSource\\FeedBundle\\Entity\\Post' . "\0" . 'comments');
     }
 
     /**
@@ -257,6 +257,28 @@ class Post extends \OpenSource\FeedBundle\Entity\Post implements \Doctrine\ORM\P
     /**
      * {@inheritDoc}
      */
+    public function setPostText($postText)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPostText', array($postText));
+
+        return parent::setPostText($postText);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getPostText()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPostText', array());
+
+        return parent::getPostText();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function setSummary($summary)
     {
 
@@ -329,6 +351,72 @@ class Post extends \OpenSource\FeedBundle\Entity\Post implements \Doctrine\ORM\P
         $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', array());
 
         return parent::__toString();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setSlug($slug)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setSlug', array($slug));
+
+        return parent::setSlug($slug);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getSlug()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getSlug', array());
+
+        return parent::getSlug();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addComment(\OpenSource\FeedBundle\Entity\Comment $comment)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addComment', array($comment));
+
+        return parent::addComment($comment);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeComment(\OpenSource\FeedBundle\Entity\Comment $comment)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeComment', array($comment));
+
+        return parent::removeComment($comment);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getComments()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getComments', array());
+
+        return parent::getComments();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function slugify($text)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'slugify', array($text));
+
+        return parent::slugify($text);
     }
 
 }
