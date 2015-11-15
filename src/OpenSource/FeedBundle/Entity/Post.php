@@ -25,6 +25,11 @@ class Post
   private $id;
 
   /**
+  * @ORM\Column(type="string", length=255)
+  */
+  private $slug;
+
+  /**
   * @var string
   *
   * @ORM\Column(name="title", type="string", length=255)
@@ -32,7 +37,7 @@ class Post
   private $title;
 
   /**
-  * @var \DateTime
+  * @var \Date
   *
   * @ORM\Column(name="date", type="date")
   */
@@ -44,6 +49,13 @@ class Post
   * @ORM\Column(name="pre_text", type="text")
   */
   private $preText;
+
+  /**
+  * @var string
+  *
+  * @ORM\Column(name="post_text", type="text")
+  */
+  private $postText;
 
   /**
   * @var string
@@ -80,6 +92,8 @@ class Post
   public function setTitle($title)
   {
     $this->title = $title;
+
+    $this->setSlug($this->title);
 
     return $this;
   }
@@ -140,6 +154,30 @@ class Post
   public function getPreText()
   {
     return $this->preText;
+  }
+
+  /**
+  * Set postText
+  *
+  * @param string $postText
+  *
+  * @return Content
+  */
+  public function setPostText($postText)
+  {
+    $this->postText = $postText;
+
+    return $this;
+  }
+
+  /**
+  * Get postText
+  *
+  * @return string
+  */
+  public function getPostText()
+  {
+    return $this->postText;
   }
 
   /**
@@ -221,7 +259,7 @@ class Post
   }
 
   /**
-  * @ORM\OneToMany(targetEntity="Comment", mappedBy="post")
+  * @ORM\OneToMany(targetEntity="Comment", mappedBy="post", orphanRemoval=true, cascade={"persist", "remove"})
   */
   private $comments;
   public function __construct() {
@@ -237,5 +275,94 @@ class Post
   */
   public function __toString() {
     return (string) $this->title;
+  }
+
+  /**
+  * Set slug
+  *
+  * @param string $slug
+  *
+  * @return Post
+  */
+  public function setSlug($slug)
+  {
+    $this->slug = $this->slugify($slug);
+
+    return $this;
+  }
+
+  /**
+  * Get slug
+  *
+  * @return string
+  */
+  public function getSlug()
+  {
+    return $this->slug;
+  }
+
+  /**
+  * Add comment
+  *
+  * @param \OpenSource\FeedBundle\Entity\Comment $comment
+  *
+  * @return Post
+  */
+  public function addComment(\OpenSource\FeedBundle\Entity\Comment $comment)
+  {
+    $this->comments[] = $comment;
+
+    return $this;
+  }
+
+  /**
+  * Remove comment
+  *
+  * @param \OpenSource\FeedBundle\Entity\Comment $comment
+  */
+  public function removeComment(\OpenSource\FeedBundle\Entity\Comment $comment)
+  {
+    $this->comments->removeElement($comment);
+  }
+
+  /**
+  * Get comments
+  *
+  * @return \Doctrine\Common\Collections\Collection
+  */
+  public function getComments()
+  {
+    return $this->comments;
+  }
+  /**
+  * Generate custom url from title
+  * @return String
+  */
+  public function slugify($text)
+  {
+    // replace non letter or digits by -
+    $text = preg_replace('#[^\\pL\d]+#u', '-', $text);
+
+    // trim
+    $text = trim($text, '-');
+
+    // transliterate
+    if (function_exists('iconv'))
+    {
+      $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+    }
+
+    // lowercase
+    $text = strtolower($text);
+
+    // remove unwanted characters
+    $text = preg_replace('#[^-\w]+#', '', $text);
+
+    if (empty($text))
+    {
+      return 'n-a';
+    }
+
+    return $text;
   }
 }

@@ -426,7 +426,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             not_post_new:
 
             // post_show
-            if (preg_match('#^/post/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/post/(?P<id>[^/]++)/(?P<slug>[^/]++)$#s', $pathinfo, $matches)) {
                 if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'HEAD'));
                     goto not_post_show;

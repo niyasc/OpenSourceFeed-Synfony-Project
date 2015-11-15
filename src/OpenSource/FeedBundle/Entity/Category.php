@@ -82,4 +82,38 @@ class Category
   public function __toString() {
     return (string) $this->name;
   }
+
+    /**
+     * Add post
+     *
+     * @param \OpenSource\FeedBundle\Entity\Post $post
+     *
+     * @return Category
+     */
+    public function addPost(\OpenSource\FeedBundle\Entity\Post $post)
+    {
+        $this->posts[] = $post;
+
+        return $this;
+    }
+
+    /**
+     * Remove post
+     *
+     * @param \OpenSource\FeedBundle\Entity\Post $post
+     */
+    public function removePost(\OpenSource\FeedBundle\Entity\Post $post)
+    {
+        $this->posts->removeElement($post);
+    }
+
+    /**
+     * Get posts
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPosts()
+    {
+        return $this->posts;
+    }
 }

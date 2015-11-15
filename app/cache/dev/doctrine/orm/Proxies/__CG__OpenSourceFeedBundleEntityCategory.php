@@ -221,4 +221,37 @@ class Category extends \OpenSource\FeedBundle\Entity\Category implements \Doctri
         return parent::__toString();
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function addPost(\OpenSource\FeedBundle\Entity\Post $post)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addPost', array($post));
+
+        return parent::addPost($post);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removePost(\OpenSource\FeedBundle\Entity\Post $post)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removePost', array($post));
+
+        return parent::removePost($post);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getPosts()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPosts', array());
+
+        return parent::getPosts();
+    }
+
 }

@@ -22,6 +22,7 @@ class PostType extends AbstractType
     ))
     ->add('preText')
     ->add('summary')
+    ->add('postText')
     ->add('link')
     ->add('category', 'entity', array(
       'class' => 'OpenSourceFeedBundle:Category',

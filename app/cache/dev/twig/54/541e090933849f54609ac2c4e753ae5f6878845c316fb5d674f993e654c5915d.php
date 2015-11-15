@@ -21,20 +21,20 @@ class __TwigTemplate_53127e3860a5dbf4aec7c6fbc1f3c6ec39b142196631923a40c75b5441f
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_e8ad51b89ff6a4a089c63548be4cd9e97bdb023a2716cc8a432848b0d5241678 = $this->env->getExtension("native_profiler");
-        $__internal_e8ad51b89ff6a4a089c63548be4cd9e97bdb023a2716cc8a432848b0d5241678->enter($__internal_e8ad51b89ff6a4a089c63548be4cd9e97bdb023a2716cc8a432848b0d5241678_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "OpenSourceFeedBundle:Post:index.html.twig"));
+        $__internal_0ea8001516b4e13338c975a6208cb204e326526ff2877411d82d350c8264164c = $this->env->getExtension("native_profiler");
+        $__internal_0ea8001516b4e13338c975a6208cb204e326526ff2877411d82d350c8264164c->enter($__internal_0ea8001516b4e13338c975a6208cb204e326526ff2877411d82d350c8264164c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "OpenSourceFeedBundle:Post:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_e8ad51b89ff6a4a089c63548be4cd9e97bdb023a2716cc8a432848b0d5241678->leave($__internal_e8ad51b89ff6a4a089c63548be4cd9e97bdb023a2716cc8a432848b0d5241678_prof);
+        $__internal_0ea8001516b4e13338c975a6208cb204e326526ff2877411d82d350c8264164c->leave($__internal_0ea8001516b4e13338c975a6208cb204e326526ff2877411d82d350c8264164c_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_4912b0fa7fe061894673d60eb0e776759bfae09f3d324b0e627b26b4b8efb047 = $this->env->getExtension("native_profiler");
-        $__internal_4912b0fa7fe061894673d60eb0e776759bfae09f3d324b0e627b26b4b8efb047->enter($__internal_4912b0fa7fe061894673d60eb0e776759bfae09f3d324b0e627b26b4b8efb047_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_9c854df97d4857246450192bdfe0621861db0e83c8c5ac9dfda99b0ed31ca2c2 = $this->env->getExtension("native_profiler");
+        $__internal_9c854df97d4857246450192bdfe0621861db0e83c8c5ac9dfda99b0ed31ca2c2->enter($__internal_9c854df97d4857246450192bdfe0621861db0e83c8c5ac9dfda99b0ed31ca2c2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "<h1>Post list</h1>
@@ -61,7 +61,7 @@ class __TwigTemplate_53127e3860a5dbf4aec7c6fbc1f3c6ec39b142196631923a40c75b5441f
             echo "            <tr>
                 <td><a href=\"";
             // line 21
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("post_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("post_show", array("id" => $this->getAttribute($context["entity"], "id", array()), "slug" => $this->getAttribute($context["entity"], "slug", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "id", array()), "html", null, true);
             echo "</a></td>
@@ -72,7 +72,7 @@ class __TwigTemplate_53127e3860a5dbf4aec7c6fbc1f3c6ec39b142196631923a40c75b5441f
                 <td>";
             // line 23
             if ($this->getAttribute($context["entity"], "date", array())) {
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["entity"], "date", array()), "Y-m-d H:i:s"), "html", null, true);
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["entity"], "date", array()), "Y-m-d"), "html", null, true);
             }
             echo "</td>
                 <td>";
@@ -92,7 +92,7 @@ class __TwigTemplate_53127e3860a5dbf4aec7c6fbc1f3c6ec39b142196631923a40c75b5441f
                     <li>
                         <a href=\"";
             // line 30
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("post_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("post_show", array("id" => $this->getAttribute($context["entity"], "id", array()), "slug" => $this->getAttribute($context["entity"], "slug", array()))), "html", null, true);
             echo "\">show</a>
                     </li>
                     <li>
@@ -125,7 +125,7 @@ class __TwigTemplate_53127e3860a5dbf4aec7c6fbc1f3c6ec39b142196631923a40c75b5441f
     </ul>
     ";
         
-        $__internal_4912b0fa7fe061894673d60eb0e776759bfae09f3d324b0e627b26b4b8efb047->leave($__internal_4912b0fa7fe061894673d60eb0e776759bfae09f3d324b0e627b26b4b8efb047_prof);
+        $__internal_9c854df97d4857246450192bdfe0621861db0e83c8c5ac9dfda99b0ed31ca2c2->leave($__internal_9c854df97d4857246450192bdfe0621861db0e83c8c5ac9dfda99b0ed31ca2c2_prof);
 
     }
 
@@ -164,16 +164,16 @@ class __TwigTemplate_53127e3860a5dbf4aec7c6fbc1f3c6ec39b142196631923a40c75b5441f
 /*         <tbody>*/
 /*         {% for entity in entities %}*/
 /*             <tr>*/
-/*                 <td><a href="{{ path('post_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>*/
+/*                 <td><a href="{{ path('post_show', { 'id': entity.id, 'slug': entity.slug }) }}">{{ entity.id }}</a></td>*/
 /*                 <td>{{ entity.title }}</td>*/
-/*                 <td>{% if entity.date %}{{ entity.date|date('Y-m-d H:i:s') }}{% endif %}</td>*/
+/*                 <td>{% if entity.date %}{{ entity.date|date('Y-m-d') }}{% endif %}</td>*/
 /*                 <td>{{ entity.preText }}</td>*/
 /*                 <td>{{ entity.summary }}</td>*/
 /*                 <td>{{ entity.link }}</td>*/
 /*                 <td>*/
 /*                 <ul>*/
 /*                     <li>*/
-/*                         <a href="{{ path('post_show', { 'id': entity.id }) }}">show</a>*/
+/*                         <a href="{{ path('post_show', { 'id': entity.id, 'slug': entity.slug }) }}">show</a>*/
 /*                     </li>*/
 /*                     <li>*/
 /*                         <a href="{{ path('post_edit', { 'id': entity.id }) }}">edit</a>*/
