@@ -4,6 +4,8 @@ namespace OpenSource\FeedBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\Common\Collections\ArrayCollection as ArrayCollection;
+
 
 
 
@@ -64,5 +66,20 @@ class Category
   public function getName()
   {
     return $this->name;
+  }
+
+  /**
+  * @ORM\OneToMany(targetEntity="Post", mappedBy="category")
+  */
+  private $posts;
+  public function __construct() {
+    $this->posts = new ArrayCollection();
+  }
+  /**
+  * Convert Category Object to String
+  * @return string
+  */
+  public function __toString() {
+    return (string) $this->name;
   }
 }

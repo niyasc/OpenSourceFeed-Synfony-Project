@@ -127,87 +127,174 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        if (0 === strpos($pathinfo, '/category')) {
-            // category
-            if (rtrim($pathinfo, '/') === '/category') {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_category;
-                }
+        if (0 === strpos($pathinfo, '/c')) {
+            if (0 === strpos($pathinfo, '/category')) {
+                // category
+                if (rtrim($pathinfo, '/') === '/category') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_category;
+                    }
 
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'category');
-                }
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'category');
+                    }
 
-                return array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\CategoryController::indexAction',  '_route' => 'category',);
+                    return array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\CategoryController::indexAction',  '_route' => 'category',);
+                }
+                not_category:
+
+                // category_create
+                if ($pathinfo === '/category/') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_category_create;
+                    }
+
+                    return array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\CategoryController::createAction',  '_route' => 'category_create',);
+                }
+                not_category_create:
+
+                // category_new
+                if ($pathinfo === '/category/new') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_category_new;
+                    }
+
+                    return array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\CategoryController::newAction',  '_route' => 'category_new',);
+                }
+                not_category_new:
+
+                // category_show
+                if (preg_match('#^/category/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_category_show;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'category_show')), array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\CategoryController::showAction',));
+                }
+                not_category_show:
+
+                // category_edit
+                if (preg_match('#^/category/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_category_edit;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'category_edit')), array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\CategoryController::editAction',));
+                }
+                not_category_edit:
+
+                // category_update
+                if (preg_match('#^/category/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'PUT') {
+                        $allow[] = 'PUT';
+                        goto not_category_update;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'category_update')), array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\CategoryController::updateAction',));
+                }
+                not_category_update:
+
+                // category_delete
+                if (preg_match('#^/category/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'DELETE') {
+                        $allow[] = 'DELETE';
+                        goto not_category_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'category_delete')), array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\CategoryController::deleteAction',));
+                }
+                not_category_delete:
+
             }
-            not_category:
 
-            // category_create
-            if ($pathinfo === '/category/') {
-                if ($this->context->getMethod() != 'POST') {
-                    $allow[] = 'POST';
-                    goto not_category_create;
+            if (0 === strpos($pathinfo, '/comment')) {
+                // comment
+                if (rtrim($pathinfo, '/') === '/comment') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_comment;
+                    }
+
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'comment');
+                    }
+
+                    return array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\CommentController::indexAction',  '_route' => 'comment',);
                 }
+                not_comment:
 
-                return array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\CategoryController::createAction',  '_route' => 'category_create',);
-            }
-            not_category_create:
+                // comment_create
+                if ($pathinfo === '/comment/') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_comment_create;
+                    }
 
-            // category_new
-            if ($pathinfo === '/category/new') {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_category_new;
+                    return array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\CommentController::createAction',  '_route' => 'comment_create',);
                 }
+                not_comment_create:
 
-                return array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\CategoryController::newAction',  '_route' => 'category_new',);
-            }
-            not_category_new:
+                // comment_new
+                if ($pathinfo === '/comment/new') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_comment_new;
+                    }
 
-            // category_show
-            if (preg_match('#^/category/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_category_show;
+                    return array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\CommentController::newAction',  '_route' => 'comment_new',);
                 }
+                not_comment_new:
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'category_show')), array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\CategoryController::showAction',));
-            }
-            not_category_show:
+                // comment_show
+                if (preg_match('#^/comment/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_comment_show;
+                    }
 
-            // category_edit
-            if (preg_match('#^/category/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_category_edit;
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'comment_show')), array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\CommentController::showAction',));
                 }
+                not_comment_show:
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'category_edit')), array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\CategoryController::editAction',));
-            }
-            not_category_edit:
+                // comment_edit
+                if (preg_match('#^/comment/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_comment_edit;
+                    }
 
-            // category_update
-            if (preg_match('#^/category/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                if ($this->context->getMethod() != 'PUT') {
-                    $allow[] = 'PUT';
-                    goto not_category_update;
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'comment_edit')), array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\CommentController::editAction',));
                 }
+                not_comment_edit:
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'category_update')), array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\CategoryController::updateAction',));
-            }
-            not_category_update:
+                // comment_update
+                if (preg_match('#^/comment/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'PUT') {
+                        $allow[] = 'PUT';
+                        goto not_comment_update;
+                    }
 
-            // category_delete
-            if (preg_match('#^/category/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                if ($this->context->getMethod() != 'DELETE') {
-                    $allow[] = 'DELETE';
-                    goto not_category_delete;
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'comment_update')), array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\CommentController::updateAction',));
                 }
+                not_comment_update:
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'category_delete')), array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\CategoryController::deleteAction',));
+                // comment_delete
+                if (preg_match('#^/comment/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'DELETE') {
+                        $allow[] = 'DELETE';
+                        goto not_comment_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'comment_delete')), array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\CommentController::deleteAction',));
+                }
+                not_comment_delete:
+
             }
-            not_category_delete:
 
         }
 
@@ -297,6 +384,90 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'newsletter_delete')), array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\NewsLetterController::deleteAction',));
             }
             not_newsletter_delete:
+
+        }
+
+        if (0 === strpos($pathinfo, '/post')) {
+            // post
+            if (rtrim($pathinfo, '/') === '/post') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_post;
+                }
+
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'post');
+                }
+
+                return array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\PostController::indexAction',  '_route' => 'post',);
+            }
+            not_post:
+
+            // post_create
+            if ($pathinfo === '/post/') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_post_create;
+                }
+
+                return array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\PostController::createAction',  '_route' => 'post_create',);
+            }
+            not_post_create:
+
+            // post_new
+            if ($pathinfo === '/post/new') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_post_new;
+                }
+
+                return array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\PostController::newAction',  '_route' => 'post_new',);
+            }
+            not_post_new:
+
+            // post_show
+            if (preg_match('#^/post/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_post_show;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'post_show')), array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\PostController::showAction',));
+            }
+            not_post_show:
+
+            // post_edit
+            if (preg_match('#^/post/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_post_edit;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'post_edit')), array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\PostController::editAction',));
+            }
+            not_post_edit:
+
+            // post_update
+            if (preg_match('#^/post/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'PUT') {
+                    $allow[] = 'PUT';
+                    goto not_post_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'post_update')), array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\PostController::updateAction',));
+            }
+            not_post_update:
+
+            // post_delete
+            if (preg_match('#^/post/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'DELETE') {
+                    $allow[] = 'DELETE';
+                    goto not_post_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'post_delete')), array (  '_controller' => 'OpenSource\\FeedBundle\\Controller\\PostController::deleteAction',));
+            }
+            not_post_delete:
 
         }
 
