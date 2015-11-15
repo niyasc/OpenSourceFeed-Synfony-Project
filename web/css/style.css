@@ -174,12 +174,35 @@ footer {
   margin-top: 20px;
 }
 
-.content {
+main {
   margin: auto;
   background: white;
   text-align: center;
+  padding-top: 20px;
 }
 
+/* Post Style */
+.post-entry {
+  text-align: left;
+}
+.post-entry h2 {
+  margin-top: 0px;
+}
+/*date, category and comment count*/
+.post-info {
+  margin-bottom: 20px;
+  text-align: right;
+}
+/*post-body*/
+.post-content {
+  font-size: 16px;
+}
+blockquote {
+  margin: 20px 0 20px 0;
+  background: #eee;
+  border: 0;
+  font-size: 15px;
+}
 /*Responsive Design*/
 @media (max-width: 460px) {
 

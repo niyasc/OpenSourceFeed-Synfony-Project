@@ -105,7 +105,7 @@ class PostController extends Controller
   /**
   * Finds and displays a Post entity.
   *
-  * @Route("/{id}/{slug}", name="post_show")
+  * @Route("/view/{id}/{slug}", name="post_show")
   * @Method("GET")
   * @Template()
   */
@@ -130,7 +130,7 @@ class PostController extends Controller
   /**
   * Displays a form to edit an existing Post entity.
   *
-  * @Route("/{id}/edit", name="post_edit")
+  * @Route("/edit/{id}", name="post_edit")
   * @Method("GET")
   * @Template()
   */
@@ -196,7 +196,7 @@ class PostController extends Controller
     if ($editForm->isValid()) {
       $em->flush();
 
-      return $this->redirect($this->generateUrl('post_edit', array('id' => $id)));
+      return $this->redirect($this->generateUrl('post_show', array('id' => $id, 'slug' => $entity->getSlug())));
     }
 
     return array(

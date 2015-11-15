@@ -1,48 +1,42 @@
 {% extends '::base.html.twig' %}
+{% block title %}{{entity.title}} | OpenSourceFeed - Stories of Free/Open Source Technologies{% endblock %}
+{% block content -%}
+<div class="post-entry">
+  <h2>{{entity.title}}</h2>
+  <div class="post-info">
+    <span class="glyphicon glyphicon-folder-open"> {{entity.category }}</span>&nbsp;&nbsp;
+    <span class="glyphicon glyphicon-time"> {{entity.date|date('Y-m-d') }} </span>&nbsp;&nbsp;
+    <span class="glyphicon glyphicon-comment"> {{entity.comments | length}} Comments</span>&nbsp;&nbsp;
+  </div>
+  <div class="post-content">
+    <p>
+      {{ entity.preText }}
+    </p>
+    <blockquote>
+      {{ entity.summary }}
+    </blockquote>
+    <p>
+      Read complete article <a href="{{ entity.link}}" target="_blank">here</a>
+    </p>
+    <div>
+      {{ entity.postText | raw }}
+    </div>
+  </div>
 
-{% block body -%}
-    <h1>Post</h1>
 
-    <table class="record_properties">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ entity.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ entity.title }}</td>
-            </tr>
-            <tr>
-                <th>Date</th>
-                <td>{{ entity.date|date('Y-m-d H:i:s') }}</td>
-            </tr>
-            <tr>
-                <th>Pretext</th>
-                <td>{{ entity.preText }}</td>
-            </tr>
-            <tr>
-                <th>Summary</th>
-                <td>{{ entity.summary }}</td>
-            </tr>
-            <tr>
-                <th>Link</th>
-                <td>{{ entity.link }}</td>
-            </tr>
-        </tbody>
-    </table>
 
-        <ul class="record_actions">
+  <ul class="record_actions">
     <li>
-        <a href="{{ path('post') }}">
-            Back to the list
-        </a>
+      <a href="{{ path('post') }}">
+        Back to the list
+      </a>
     </li>
     <li>
-        <a href="{{ path('post_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
+      <a href="{{ path('post_edit', { 'id': entity.id }) }}">
+        Edit
+      </a>
     </li>
     <li>{{ form(delete_form) }}</li>
-</ul>
+  </ul>
+</div>
 {% endblock %}
