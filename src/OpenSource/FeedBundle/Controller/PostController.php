@@ -126,11 +126,13 @@ class PostController extends Controller
     }
 
     $deleteForm = $this->createDeleteForm($id);
-
+    $comment = new Comment();
+    $comment -> setPost($entity);
+    $commentForm = $this -> createCommentForm($comment);
     return array(
       'entity'      => $entity,
       'delete_form' => $deleteForm->createView(),
-      'comment_form' => $this -> createCommentForm(new Comment())->createView()
+      'comment_form' => $commentForm->createView()
     );
   }
 

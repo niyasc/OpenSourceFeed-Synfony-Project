@@ -15,36 +15,45 @@ class CommentType extends AbstractType
   public function buildForm(FormBuilderInterface $builder, array $options)
   {
     $builder
-    ->add('name')
-    ->add('reference')
-    ->add('date', 'date', array(
-      'html5' => TRUE,
-      'widget' => 'single_text',
-      'read_only' => TRUE
-    ))
-    ->add('message')
-    ->add('post','entity', array(
-      'class' => 'OpenSourceFeedBundle:Post',
-      'required' => TRUE
-    ))
-    ;
-  }
+    ->add('name', 'text', array(
+      'required' => TRUE,
+      'attr' => array(
+        'class' => 'form-control',
+        'id' => 'name'
+      ),
+      'label_attr' => array(
+        'for' => 'name'
+      )
+      ))
+      ->add('reference')
+      ->add('date', 'date', array(
+        'html5' => TRUE,
+        'widget' => 'single_text',
+        'read_only' => TRUE
+      ))
+      ->add('message')
+      ->add('post','entity', array(
+        'class' => 'OpenSourceFeedBundle:Post',
+        'required' => TRUE
+      ))
+      ;
+    }
 
-  /**
-  * @param OptionsResolverInterface $resolver
-  */
-  public function setDefaultOptions(OptionsResolverInterface $resolver)
-  {
-    $resolver->setDefaults(array(
-      'data_class' => 'OpenSource\FeedBundle\Entity\Comment'
-    ));
-  }
+    /**
+    * @param OptionsResolverInterface $resolver
+    */
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+      $resolver->setDefaults(array(
+        'data_class' => 'OpenSource\FeedBundle\Entity\Comment'
+      ));
+    }
 
-  /**
-  * @return string
-  */
-  public function getName()
-  {
-    return 'opensource_feedbundle_comment';
+    /**
+    * @return string
+    */
+    public function getName()
+    {
+      return 'opensource_feedbundle_comment';
+    }
   }
-}

@@ -26,7 +26,13 @@
   </div>
   <hr>
   <h3>Post A Comment</h3>
-  {{form(comment_form)}}
+
+  {{form_start(comment_form)}}
+    <div class="form-group">
+      {{form_label(comment_form.name)}}
+      {{form_widget(comment_form.name)}}
+    </div>
+  {{form_end(comment_form)}}
   {% if entity.comments | length > 0 %}
   <hr>
   <h3>Comments</h3>
