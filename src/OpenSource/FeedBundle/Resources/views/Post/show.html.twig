@@ -32,6 +32,18 @@
       {{form_label(comment_form.name)}}
       {{form_widget(comment_form.name)}}
     </div>
+    <div class="form-group">
+      {{form_label(comment_form.reference)}}
+      {{form_widget(comment_form.reference)}}
+    </div>
+    <div class="form-group">
+      {{form_label(comment_form.message)}}
+      {{form_widget(comment_form.message)}}
+    </div>
+    <div class="form-group">
+      {{form_widget(comment_form.submit, {attr: {'class': 'btn btn-primary btn-sm custom-btn'}, label: 'COMMENT'})}}
+    </div>
+
   {{form_end(comment_form)}}
   {% if entity.comments | length > 0 %}
   <hr>

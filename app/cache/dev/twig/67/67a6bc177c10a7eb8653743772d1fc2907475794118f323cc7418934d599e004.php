@@ -22,33 +22,33 @@ class __TwigTemplate_2d8a81dfe476df75eabb0a4391ebb1caead3d104c09ade26eac2fe79db7
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_5c95eda6335cadf0a49128ed136089bb157c9d026819485b8c6292b987bdd430 = $this->env->getExtension("native_profiler");
-        $__internal_5c95eda6335cadf0a49128ed136089bb157c9d026819485b8c6292b987bdd430->enter($__internal_5c95eda6335cadf0a49128ed136089bb157c9d026819485b8c6292b987bdd430_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "OpenSourceFeedBundle:Post:show.html.twig"));
+        $__internal_bb42d4711188a3c8fc3decba0ef6d5b322b1cfcfc0e0f845a23eec37cf90a729 = $this->env->getExtension("native_profiler");
+        $__internal_bb42d4711188a3c8fc3decba0ef6d5b322b1cfcfc0e0f845a23eec37cf90a729->enter($__internal_bb42d4711188a3c8fc3decba0ef6d5b322b1cfcfc0e0f845a23eec37cf90a729_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "OpenSourceFeedBundle:Post:show.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_5c95eda6335cadf0a49128ed136089bb157c9d026819485b8c6292b987bdd430->leave($__internal_5c95eda6335cadf0a49128ed136089bb157c9d026819485b8c6292b987bdd430_prof);
+        $__internal_bb42d4711188a3c8fc3decba0ef6d5b322b1cfcfc0e0f845a23eec37cf90a729->leave($__internal_bb42d4711188a3c8fc3decba0ef6d5b322b1cfcfc0e0f845a23eec37cf90a729_prof);
 
     }
 
     // line 2
     public function block_title($context, array $blocks = array())
     {
-        $__internal_1751602222d6756ea67de7e8f03a0348cd68b8584ec7a5d1cb6671f90b8f86d3 = $this->env->getExtension("native_profiler");
-        $__internal_1751602222d6756ea67de7e8f03a0348cd68b8584ec7a5d1cb6671f90b8f86d3->enter($__internal_1751602222d6756ea67de7e8f03a0348cd68b8584ec7a5d1cb6671f90b8f86d3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_f9e279b0131d4a4ca1eda0da90c51a8377c0a00f5869c576c57e432e34032de9 = $this->env->getExtension("native_profiler");
+        $__internal_f9e279b0131d4a4ca1eda0da90c51a8377c0a00f5869c576c57e432e34032de9->enter($__internal_f9e279b0131d4a4ca1eda0da90c51a8377c0a00f5869c576c57e432e34032de9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "title", array()), "html", null, true);
         echo " | OpenSourceFeed - Stories of Free/Open Source Technologies";
         
-        $__internal_1751602222d6756ea67de7e8f03a0348cd68b8584ec7a5d1cb6671f90b8f86d3->leave($__internal_1751602222d6756ea67de7e8f03a0348cd68b8584ec7a5d1cb6671f90b8f86d3_prof);
+        $__internal_f9e279b0131d4a4ca1eda0da90c51a8377c0a00f5869c576c57e432e34032de9->leave($__internal_f9e279b0131d4a4ca1eda0da90c51a8377c0a00f5869c576c57e432e34032de9_prof);
 
     }
 
     // line 3
     public function block_content($context, array $blocks = array())
     {
-        $__internal_ad46375587226782a481953f75366292642692bdc7ef4a1e399cdad746d3fbf1 = $this->env->getExtension("native_profiler");
-        $__internal_ad46375587226782a481953f75366292642692bdc7ef4a1e399cdad746d3fbf1->enter($__internal_ad46375587226782a481953f75366292642692bdc7ef4a1e399cdad746d3fbf1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_c2764a5a0b25918e2901f57e53ef09097bb1fd3a91c4252086112016e29ac9de = $this->env->getExtension("native_profiler");
+        $__internal_c2764a5a0b25918e2901f57e53ef09097bb1fd3a91c4252086112016e29ac9de->enter($__internal_c2764a5a0b25918e2901f57e53ef09097bb1fd3a91c4252086112016e29ac9de_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 4
         echo "<div class=\"post-entry\">
@@ -118,41 +118,68 @@ class __TwigTemplate_2d8a81dfe476df75eabb0a4391ebb1caead3d104c09ade26eac2fe79db7
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["comment_form"]) ? $context["comment_form"] : $this->getContext($context, "comment_form")), "name", array()), 'widget');
         echo "
     </div>
+    <div class=\"form-group\">
+      ";
+        // line 36
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["comment_form"]) ? $context["comment_form"] : $this->getContext($context, "comment_form")), "reference", array()), 'label');
+        echo "
+      ";
+        // line 37
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["comment_form"]) ? $context["comment_form"] : $this->getContext($context, "comment_form")), "reference", array()), 'widget');
+        echo "
+    </div>
+    <div class=\"form-group\">
+      ";
+        // line 40
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["comment_form"]) ? $context["comment_form"] : $this->getContext($context, "comment_form")), "message", array()), 'label');
+        echo "
+      ";
+        // line 41
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["comment_form"]) ? $context["comment_form"] : $this->getContext($context, "comment_form")), "message", array()), 'widget');
+        echo "
+    </div>
+    <div class=\"form-group\">
+      ";
+        // line 44
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["comment_form"]) ? $context["comment_form"] : $this->getContext($context, "comment_form")), "submit", array()), 'widget', array("attr" => array("class" => "btn btn-primary btn-sm custom-btn"), "label" => "COMMENT"));
+        echo "
+    </div>
+
   ";
-        // line 35
+        // line 47
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["comment_form"]) ? $context["comment_form"] : $this->getContext($context, "comment_form")), 'form_end');
         echo "
   ";
-        // line 36
+        // line 48
         if ((twig_length_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "comments", array())) > 0)) {
-            // line 37
+            // line 49
             echo "  <hr>
   <h3>Comments</h3>
 
   <div class=\"comment-area\">
     ";
-            // line 41
+            // line 53
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(twig_reverse_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "comments", array())));
             foreach ($context['_seq'] as $context["_key"] => $context["comment"]) {
-                // line 42
+                // line 54
                 echo "    <div class=\"panel panel-default\">
       <div class=\"panel-body\">
         <div>
           <span class=\"glyphicon glyphicon-user\"></span>
           <strong>";
-                // line 46
+                // line 58
                 echo twig_escape_filter($this->env, $this->getAttribute($context["comment"], "name", array()), "html", null, true);
                 echo "</strong>
           <span class=\"text-muted\"> commented on </span>
           ";
-                // line 48
+                // line 60
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["comment"], "date", array()), "Y-m-d"), "html", null, true);
                 echo "
         </div>
         <div class=\"comment-message\">
           ";
-                // line 51
+                // line 63
                 echo twig_escape_filter($this->env, $this->getAttribute($context["comment"], "message", array()), "html", null, true);
                 echo "
         </div>
@@ -163,16 +190,16 @@ class __TwigTemplate_2d8a81dfe476df75eabb0a4391ebb1caead3d104c09ade26eac2fe79db7
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 56
+            // line 68
             echo "  </div>
   ";
         }
-        // line 58
+        // line 70
         echo "
   <ul class=\"record_actions\">
     <li>
       <a href=\"";
-        // line 61
+        // line 73
         echo $this->env->getExtension('routing')->getPath("post");
         echo "\">
         Back to the list
@@ -180,21 +207,21 @@ class __TwigTemplate_2d8a81dfe476df75eabb0a4391ebb1caead3d104c09ade26eac2fe79db7
     </li>
     <li>
       <a href=\"";
-        // line 66
+        // line 78
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("post_edit", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id", array()))), "html", null, true);
         echo "\">
         Edit
       </a>
     </li>
     <li>";
-        // line 70
+        // line 82
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form');
         echo "</li>
   </ul>
 </div>
 ";
         
-        $__internal_ad46375587226782a481953f75366292642692bdc7ef4a1e399cdad746d3fbf1->leave($__internal_ad46375587226782a481953f75366292642692bdc7ef4a1e399cdad746d3fbf1_prof);
+        $__internal_c2764a5a0b25918e2901f57e53ef09097bb1fd3a91c4252086112016e29ac9de->leave($__internal_c2764a5a0b25918e2901f57e53ef09097bb1fd3a91c4252086112016e29ac9de_prof);
 
     }
 
@@ -210,7 +237,7 @@ class __TwigTemplate_2d8a81dfe476df75eabb0a4391ebb1caead3d104c09ade26eac2fe79db7
 
     public function getDebugInfo()
     {
-        return array (  191 => 70,  184 => 66,  176 => 61,  171 => 58,  167 => 56,  156 => 51,  150 => 48,  145 => 46,  139 => 42,  135 => 41,  129 => 37,  127 => 36,  123 => 35,  118 => 33,  114 => 32,  109 => 30,  100 => 24,  94 => 21,  88 => 18,  82 => 15,  75 => 11,  71 => 10,  67 => 9,  61 => 6,  57 => 5,  54 => 4,  48 => 3,  35 => 2,  11 => 1,);
+        return array (  218 => 82,  211 => 78,  203 => 73,  198 => 70,  194 => 68,  183 => 63,  177 => 60,  172 => 58,  166 => 54,  162 => 53,  156 => 49,  154 => 48,  150 => 47,  144 => 44,  138 => 41,  134 => 40,  128 => 37,  124 => 36,  118 => 33,  114 => 32,  109 => 30,  100 => 24,  94 => 21,  88 => 18,  82 => 15,  75 => 11,  71 => 10,  67 => 9,  61 => 6,  57 => 5,  54 => 4,  48 => 3,  35 => 2,  11 => 1,);
     }
 }
 /* {% extends '::base.html.twig' %}*/
@@ -247,6 +274,18 @@ class __TwigTemplate_2d8a81dfe476df75eabb0a4391ebb1caead3d104c09ade26eac2fe79db7
 /*       {{form_label(comment_form.name)}}*/
 /*       {{form_widget(comment_form.name)}}*/
 /*     </div>*/
+/*     <div class="form-group">*/
+/*       {{form_label(comment_form.reference)}}*/
+/*       {{form_widget(comment_form.reference)}}*/
+/*     </div>*/
+/*     <div class="form-group">*/
+/*       {{form_label(comment_form.message)}}*/
+/*       {{form_widget(comment_form.message)}}*/
+/*     </div>*/
+/*     <div class="form-group">*/
+/*       {{form_widget(comment_form.submit, {attr: {'class': 'btn btn-primary btn-sm custom-btn'}, label: 'COMMENT'})}}*/
+/*     </div>*/
+/* */
 /*   {{form_end(comment_form)}}*/
 /*   {% if entity.comments | length > 0 %}*/
 /*   <hr>*/
