@@ -206,7 +206,7 @@ blockquote {
 
 /*Comments*/
 .comment-message {
-  margin-top: 10px; 
+  margin-top: 10px;
 }
 /*Responsive Design*/
 @media (max-width: 460px) {

@@ -42,7 +42,9 @@
     <a class="btn btn-sm btn-primary custom-btn" href="{{ path('logout', {'target_url': app.request.uri})  }}">Logout</a>
   </div>
   {% endif %}
+
   <main>
+    {% block main %}
     <div class="container">
       <div class="row">
         <div class="col-sm-8">
@@ -56,11 +58,13 @@
         </div>
       </div>
     </div>
-  </main>
-  {% block footer %}
-  <footer>
-    &copy; OpenSourceFeeder 2014-2015
-  </footer>
+  {% endblock %} <!-- End of Main -->
+</main>
+
+{% block footer %}
+<footer>
+  &copy; OpenSourceFeeder 2014-2015
+</footer>
 {% endblock %}
 {% endblock %}
 {% block javascripts %}

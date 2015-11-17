@@ -1,49 +1,27 @@
 {% extends '::base.html.twig' %}
 
-{% block body -%}
-    <h1>Post list</h1>
+{% block main -%}
+<h2>POST SUMMARY</h2>
+<a href="{{ path('post_new') }}" class="btn btn-primary btn-sm custom-btn">
+  NEW POST
+</a>
+<table class="table table-bordered table-striped">
+  {% for entity in pagination %}
+  <tr>
+    <td>{{ entity.title }}</td>
+    <td>{% if entity.date %}{{ entity.date|date('Y-m-d') }}{% endif %}</td>
+    <td>
+      <a href="{{ path('post_show', { 'id': entity.id, 'slug': entity.slug }) }}" class="btn btn-primary btn-sm custom-btn">VIEW</a>
+      <a href="{{ path('post_edit', { 'id': entity.id }) }}" class="btn btn-primary btn-sm custom-btn">EDIT</a>
+    </td>
+  </tr>
+  {% endfor %}
 
-    <table class="records_list">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Date</th>
-                <th>Pretext</th>
-                <th>Summary</th>
-                <th>Link</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('post_show', { 'id': entity.id, 'slug': entity.slug }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.title }}</td>
-                <td>{% if entity.date %}{{ entity.date|date('Y-m-d') }}{% endif %}</td>
-                <td>{{ entity.preText }}</td>
-                <td>{{ entity.summary }}</td>
-                <td>{{ entity.link }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('post_show', { 'id': entity.id, 'slug': entity.slug }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('post_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+</table>
+<div class="navigation">
+  {{ knp_pagination_render(pagination) }}
+</div>
 
-        <ul>
-        <li>
-            <a href="{{ path('post_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
-    {% endblock %}
+
+
+{% endblock %}
