@@ -62,7 +62,13 @@ class CommentType extends AbstractType
     ))
     ->add('post','entity', array(
       'class' => 'OpenSourceFeedBundle:Post',
-      'required' => TRUE
+      'required' => TRUE,
+      'attr' => array(
+        'hidden' => TRUE
+      ),
+      'label_attr' => array(
+        'hidden' => TRUE
+      )
     ))
     ;
   }

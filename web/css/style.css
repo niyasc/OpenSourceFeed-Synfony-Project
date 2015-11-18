@@ -203,7 +203,9 @@ blockquote {
   border: 0;
   font-size: 15px;
 }
-
+.post-form .form-control {
+max-width:  720px;
+}
 /*Comments*/
 .comment-message {
   margin-top: 10px;

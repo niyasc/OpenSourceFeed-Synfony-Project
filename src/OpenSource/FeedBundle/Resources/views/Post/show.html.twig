@@ -28,21 +28,21 @@
   <h3>Post A Comment</h3>
 
   {{form_start(comment_form)}}
-    <div class="form-group">
-      {{form_label(comment_form.name)}}
-      {{form_widget(comment_form.name)}}
-    </div>
-    <div class="form-group">
-      {{form_label(comment_form.reference)}}
-      {{form_widget(comment_form.reference)}}
-    </div>
-    <div class="form-group">
-      {{form_label(comment_form.message)}}
-      {{form_widget(comment_form.message)}}
-    </div>
-    <div class="form-group">
-      {{form_widget(comment_form.submit, {attr: {'class': 'btn btn-primary btn-sm custom-btn'}, label: 'COMMENT'})}}
-    </div>
+  <div class="form-group">
+    {{form_label(comment_form.name)}}
+    {{form_widget(comment_form.name)}}
+  </div>
+  <div class="form-group">
+    {{form_label(comment_form.reference)}}
+    {{form_widget(comment_form.reference)}}
+  </div>
+  <div class="form-group">
+    {{form_label(comment_form.message)}}
+    {{form_widget(comment_form.message)}}
+  </div>
+  <div class="form-group">
+    {{form_widget(comment_form.submit, {attr: {'class': 'btn btn-primary btn-sm custom-btn'}, label: 'COMMENT'})}}
+  </div>
 
   {{form_end(comment_form)}}
   {% if entity.comments | length > 0 %}
@@ -67,19 +67,16 @@
     {% endfor %}
   </div>
   {% endif %}
-
-  <ul class="record_actions">
-    <li>
-      <a href="{{ path('post') }}">
-        Back to the list
-      </a>
-    </li>
-    <li>
-      <a href="{{ path('post_edit', { 'id': entity.id }) }}">
-        Edit
-      </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-  </ul>
+  {% if is_granted('ROLE_ADMIN') %}
+  <a href="{{ path('post') }}" class="btn btn-sm btn-primary custom-btn">
+    VIEW ALL POSTS
+  </a>
+  <a href="{{ path('post_edit', { 'id': entity.id }) }}" class="btn btn-sm btn-primary custom-btn">
+    EDIT
+  </a>
+  {{form_start(delete_form, {attr: {'style': 'display: inline', 'onsubmit': 'return confirm("Are You Sure?")'}})}}
+  {{form_widget(delete_form.submit, {attr: {'class': 'btn btn-primary btn-sm custom-btn'},'label': 'DELETE'})}}
+  {{form_end(delete_form)}}
+  {% endif %}
 </div>
 {% endblock %}

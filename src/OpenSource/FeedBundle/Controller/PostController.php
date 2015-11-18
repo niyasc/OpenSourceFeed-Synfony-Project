@@ -39,7 +39,7 @@ class PostController extends Controller
     $paginator  = $this->get('knp_paginator');
     $pagination = $paginator->paginate($query,
     $request->query->getInt('page', 1),
-    1
+    3
   );
 
   return $this->render('OpenSourceFeedBundle:Post:index.html.twig', array('pagination' => $pagination));
@@ -53,6 +53,7 @@ class PostController extends Controller
 */
 public function createAction(Request $request)
 {
+  $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
   $entity = new Post();
   $form = $this->createCreateForm($entity);
   $form->handleRequest($request);
@@ -102,6 +103,7 @@ private function createCreateForm(Post $entity)
 */
 public function newAction()
 {
+  $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
   $entity = new Post();
   $form   = $this->createCreateForm($entity);
 

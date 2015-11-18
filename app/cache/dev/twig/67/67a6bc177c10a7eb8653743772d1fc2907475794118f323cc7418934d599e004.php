@@ -22,33 +22,33 @@ class __TwigTemplate_2d8a81dfe476df75eabb0a4391ebb1caead3d104c09ade26eac2fe79db7
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_bb42d4711188a3c8fc3decba0ef6d5b322b1cfcfc0e0f845a23eec37cf90a729 = $this->env->getExtension("native_profiler");
-        $__internal_bb42d4711188a3c8fc3decba0ef6d5b322b1cfcfc0e0f845a23eec37cf90a729->enter($__internal_bb42d4711188a3c8fc3decba0ef6d5b322b1cfcfc0e0f845a23eec37cf90a729_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "OpenSourceFeedBundle:Post:show.html.twig"));
+        $__internal_94d75152b41c7d962b7a382bc5686a9257361f2b4ff20b94db3dec236144e995 = $this->env->getExtension("native_profiler");
+        $__internal_94d75152b41c7d962b7a382bc5686a9257361f2b4ff20b94db3dec236144e995->enter($__internal_94d75152b41c7d962b7a382bc5686a9257361f2b4ff20b94db3dec236144e995_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "OpenSourceFeedBundle:Post:show.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_bb42d4711188a3c8fc3decba0ef6d5b322b1cfcfc0e0f845a23eec37cf90a729->leave($__internal_bb42d4711188a3c8fc3decba0ef6d5b322b1cfcfc0e0f845a23eec37cf90a729_prof);
+        $__internal_94d75152b41c7d962b7a382bc5686a9257361f2b4ff20b94db3dec236144e995->leave($__internal_94d75152b41c7d962b7a382bc5686a9257361f2b4ff20b94db3dec236144e995_prof);
 
     }
 
     // line 2
     public function block_title($context, array $blocks = array())
     {
-        $__internal_f9e279b0131d4a4ca1eda0da90c51a8377c0a00f5869c576c57e432e34032de9 = $this->env->getExtension("native_profiler");
-        $__internal_f9e279b0131d4a4ca1eda0da90c51a8377c0a00f5869c576c57e432e34032de9->enter($__internal_f9e279b0131d4a4ca1eda0da90c51a8377c0a00f5869c576c57e432e34032de9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_00408c6a65ba872541e233d77cafe3368f307bfd0220eaa8f50fac3a30219257 = $this->env->getExtension("native_profiler");
+        $__internal_00408c6a65ba872541e233d77cafe3368f307bfd0220eaa8f50fac3a30219257->enter($__internal_00408c6a65ba872541e233d77cafe3368f307bfd0220eaa8f50fac3a30219257_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "title", array()), "html", null, true);
         echo " | OpenSourceFeed - Stories of Free/Open Source Technologies";
         
-        $__internal_f9e279b0131d4a4ca1eda0da90c51a8377c0a00f5869c576c57e432e34032de9->leave($__internal_f9e279b0131d4a4ca1eda0da90c51a8377c0a00f5869c576c57e432e34032de9_prof);
+        $__internal_00408c6a65ba872541e233d77cafe3368f307bfd0220eaa8f50fac3a30219257->leave($__internal_00408c6a65ba872541e233d77cafe3368f307bfd0220eaa8f50fac3a30219257_prof);
 
     }
 
     // line 3
     public function block_content($context, array $blocks = array())
     {
-        $__internal_c2764a5a0b25918e2901f57e53ef09097bb1fd3a91c4252086112016e29ac9de = $this->env->getExtension("native_profiler");
-        $__internal_c2764a5a0b25918e2901f57e53ef09097bb1fd3a91c4252086112016e29ac9de->enter($__internal_c2764a5a0b25918e2901f57e53ef09097bb1fd3a91c4252086112016e29ac9de_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_ee8727433647a1819e3f58fd983b5764916d33dc84f5a7045bca8701b80dc1e1 = $this->env->getExtension("native_profiler");
+        $__internal_ee8727433647a1819e3f58fd983b5764916d33dc84f5a7045bca8701b80dc1e1->enter($__internal_ee8727433647a1819e3f58fd983b5764916d33dc84f5a7045bca8701b80dc1e1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 4
         echo "<div class=\"post-entry\">
@@ -108,42 +108,42 @@ class __TwigTemplate_2d8a81dfe476df75eabb0a4391ebb1caead3d104c09ade26eac2fe79db7
         // line 30
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["comment_form"]) ? $context["comment_form"] : $this->getContext($context, "comment_form")), 'form_start');
         echo "
-    <div class=\"form-group\">
-      ";
+  <div class=\"form-group\">
+    ";
         // line 32
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["comment_form"]) ? $context["comment_form"] : $this->getContext($context, "comment_form")), "name", array()), 'label');
         echo "
-      ";
+    ";
         // line 33
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["comment_form"]) ? $context["comment_form"] : $this->getContext($context, "comment_form")), "name", array()), 'widget');
         echo "
-    </div>
-    <div class=\"form-group\">
-      ";
+  </div>
+  <div class=\"form-group\">
+    ";
         // line 36
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["comment_form"]) ? $context["comment_form"] : $this->getContext($context, "comment_form")), "reference", array()), 'label');
         echo "
-      ";
+    ";
         // line 37
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["comment_form"]) ? $context["comment_form"] : $this->getContext($context, "comment_form")), "reference", array()), 'widget');
         echo "
-    </div>
-    <div class=\"form-group\">
-      ";
+  </div>
+  <div class=\"form-group\">
+    ";
         // line 40
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["comment_form"]) ? $context["comment_form"] : $this->getContext($context, "comment_form")), "message", array()), 'label');
         echo "
-      ";
+    ";
         // line 41
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["comment_form"]) ? $context["comment_form"] : $this->getContext($context, "comment_form")), "message", array()), 'widget');
         echo "
-    </div>
-    <div class=\"form-group\">
-      ";
+  </div>
+  <div class=\"form-group\">
+    ";
         // line 44
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["comment_form"]) ? $context["comment_form"] : $this->getContext($context, "comment_form")), "submit", array()), 'widget', array("attr" => array("class" => "btn btn-primary btn-sm custom-btn"), "label" => "COMMENT"));
         echo "
-    </div>
+  </div>
 
   ";
         // line 47
@@ -195,33 +195,39 @@ class __TwigTemplate_2d8a81dfe476df75eabb0a4391ebb1caead3d104c09ade26eac2fe79db7
   ";
         }
         // line 70
-        echo "
-  <ul class=\"record_actions\">
-    <li>
-      <a href=\"";
-        // line 73
-        echo $this->env->getExtension('routing')->getPath("post");
-        echo "\">
-        Back to the list
-      </a>
-    </li>
-    <li>
-      <a href=\"";
-        // line 78
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("post_edit", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id", array()))), "html", null, true);
-        echo "\">
-        Edit
-      </a>
-    </li>
-    <li>";
-        // line 82
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form');
-        echo "</li>
-  </ul>
-</div>
+        echo "  ";
+        if ($this->env->getExtension('security')->isGranted("ROLE_ADMIN")) {
+            // line 71
+            echo "  <a href=\"";
+            echo $this->env->getExtension('routing')->getPath("post");
+            echo "\" class=\"btn btn-sm btn-primary custom-btn\">
+    VIEW ALL POSTS
+  </a>
+  <a href=\"";
+            // line 74
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("post_edit", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id", array()))), "html", null, true);
+            echo "\" class=\"btn btn-sm btn-primary custom-btn\">
+    EDIT
+  </a>
+  ";
+            // line 77
+            echo             $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_start', array("attr" => array("style" => "display: inline", "onsubmit" => "return confirm(\"Are You Sure?\")")));
+            echo "
+  ";
+            // line 78
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), "submit", array()), 'widget', array("attr" => array("class" => "btn btn-primary btn-sm custom-btn"), "label" => "DELETE"));
+            echo "
+  ";
+            // line 79
+            echo             $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_end');
+            echo "
+  ";
+        }
+        // line 81
+        echo "</div>
 ";
         
-        $__internal_c2764a5a0b25918e2901f57e53ef09097bb1fd3a91c4252086112016e29ac9de->leave($__internal_c2764a5a0b25918e2901f57e53ef09097bb1fd3a91c4252086112016e29ac9de_prof);
+        $__internal_ee8727433647a1819e3f58fd983b5764916d33dc84f5a7045bca8701b80dc1e1->leave($__internal_ee8727433647a1819e3f58fd983b5764916d33dc84f5a7045bca8701b80dc1e1_prof);
 
     }
 
@@ -237,7 +243,7 @@ class __TwigTemplate_2d8a81dfe476df75eabb0a4391ebb1caead3d104c09ade26eac2fe79db7
 
     public function getDebugInfo()
     {
-        return array (  218 => 82,  211 => 78,  203 => 73,  198 => 70,  194 => 68,  183 => 63,  177 => 60,  172 => 58,  166 => 54,  162 => 53,  156 => 49,  154 => 48,  150 => 47,  144 => 44,  138 => 41,  134 => 40,  128 => 37,  124 => 36,  118 => 33,  114 => 32,  109 => 30,  100 => 24,  94 => 21,  88 => 18,  82 => 15,  75 => 11,  71 => 10,  67 => 9,  61 => 6,  57 => 5,  54 => 4,  48 => 3,  35 => 2,  11 => 1,);
+        return array (  227 => 81,  222 => 79,  218 => 78,  214 => 77,  208 => 74,  201 => 71,  198 => 70,  194 => 68,  183 => 63,  177 => 60,  172 => 58,  166 => 54,  162 => 53,  156 => 49,  154 => 48,  150 => 47,  144 => 44,  138 => 41,  134 => 40,  128 => 37,  124 => 36,  118 => 33,  114 => 32,  109 => 30,  100 => 24,  94 => 21,  88 => 18,  82 => 15,  75 => 11,  71 => 10,  67 => 9,  61 => 6,  57 => 5,  54 => 4,  48 => 3,  35 => 2,  11 => 1,);
     }
 }
 /* {% extends '::base.html.twig' %}*/
@@ -270,21 +276,21 @@ class __TwigTemplate_2d8a81dfe476df75eabb0a4391ebb1caead3d104c09ade26eac2fe79db7
 /*   <h3>Post A Comment</h3>*/
 /* */
 /*   {{form_start(comment_form)}}*/
-/*     <div class="form-group">*/
-/*       {{form_label(comment_form.name)}}*/
-/*       {{form_widget(comment_form.name)}}*/
-/*     </div>*/
-/*     <div class="form-group">*/
-/*       {{form_label(comment_form.reference)}}*/
-/*       {{form_widget(comment_form.reference)}}*/
-/*     </div>*/
-/*     <div class="form-group">*/
-/*       {{form_label(comment_form.message)}}*/
-/*       {{form_widget(comment_form.message)}}*/
-/*     </div>*/
-/*     <div class="form-group">*/
-/*       {{form_widget(comment_form.submit, {attr: {'class': 'btn btn-primary btn-sm custom-btn'}, label: 'COMMENT'})}}*/
-/*     </div>*/
+/*   <div class="form-group">*/
+/*     {{form_label(comment_form.name)}}*/
+/*     {{form_widget(comment_form.name)}}*/
+/*   </div>*/
+/*   <div class="form-group">*/
+/*     {{form_label(comment_form.reference)}}*/
+/*     {{form_widget(comment_form.reference)}}*/
+/*   </div>*/
+/*   <div class="form-group">*/
+/*     {{form_label(comment_form.message)}}*/
+/*     {{form_widget(comment_form.message)}}*/
+/*   </div>*/
+/*   <div class="form-group">*/
+/*     {{form_widget(comment_form.submit, {attr: {'class': 'btn btn-primary btn-sm custom-btn'}, label: 'COMMENT'})}}*/
+/*   </div>*/
 /* */
 /*   {{form_end(comment_form)}}*/
 /*   {% if entity.comments | length > 0 %}*/
@@ -309,20 +315,17 @@ class __TwigTemplate_2d8a81dfe476df75eabb0a4391ebb1caead3d104c09ade26eac2fe79db7
 /*     {% endfor %}*/
 /*   </div>*/
 /*   {% endif %}*/
-/* */
-/*   <ul class="record_actions">*/
-/*     <li>*/
-/*       <a href="{{ path('post') }}">*/
-/*         Back to the list*/
-/*       </a>*/
-/*     </li>*/
-/*     <li>*/
-/*       <a href="{{ path('post_edit', { 'id': entity.id }) }}">*/
-/*         Edit*/
-/*       </a>*/
-/*     </li>*/
-/*     <li>{{ form(delete_form) }}</li>*/
-/*   </ul>*/
+/*   {% if is_granted('ROLE_ADMIN') %}*/
+/*   <a href="{{ path('post') }}" class="btn btn-sm btn-primary custom-btn">*/
+/*     VIEW ALL POSTS*/
+/*   </a>*/
+/*   <a href="{{ path('post_edit', { 'id': entity.id }) }}" class="btn btn-sm btn-primary custom-btn">*/
+/*     EDIT*/
+/*   </a>*/
+/*   {{form_start(delete_form, {attr: {'style': 'display: inline', 'onsubmit': 'return confirm("Are You Sure?")'}})}}*/
+/*   {{form_widget(delete_form.submit, {attr: {'class': 'btn btn-primary btn-sm custom-btn'},'label': 'DELETE'})}}*/
+/*   {{form_end(delete_form)}}*/
+/*   {% endif %}*/
 /* </div>*/
 /* {% endblock %}*/
 /* */
