@@ -153,6 +153,7 @@ public function showAction($id, $slug)
 */
 public function editAction($id)
 {
+  $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
   $em = $this->getDoctrine()->getManager();
 
   $entity = $em->getRepository('OpenSourceFeedBundle:Post')->find($id);
@@ -198,6 +199,7 @@ private function createEditForm(Post $entity)
 */
 public function updateAction(Request $request, $id)
 {
+  $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
   $em = $this->getDoctrine()->getManager();
 
   $entity = $em->getRepository('OpenSourceFeedBundle:Post')->find($id);
@@ -230,6 +232,7 @@ public function updateAction(Request $request, $id)
 */
 public function deleteAction(Request $request, $id)
 {
+  $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Unable to access this page!');
   $form = $this->createDeleteForm($id);
   $form->handleRequest($request);
 

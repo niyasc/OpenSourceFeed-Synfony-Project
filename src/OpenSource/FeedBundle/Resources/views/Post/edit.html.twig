@@ -1,16 +1,30 @@
 {% extends '::base.html.twig' %}
 
-{% block body -%}
-    <h1>Post edit</h1>
+{% block main -%}
+<h2>EDIT POST</h2>
 
-    {{ form(edit_form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('post') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+{{form_start(edit_form, {'attr': {'class': 'post-form'}})}}
+<div class="form-group">
+  {{form_widget(edit_form.title)}}
+</div>
+<div class="form-group">
+  {{form_widget(edit_form.preText)}}
+</div>
+<div class="form-group">
+  {{form_widget(edit_form.summary)}}
+</div>
+<div class="form-group">
+  {{form_widget(edit_form.postText)}}
+</div>
+<div class="form-group">
+  {{form_widget(edit_form.link)}}
+</div>
+<div class="form-group">
+  {{form_widget(edit_form.category)}}
+</div>
+<div class="form-group">
+  {{form_widget(edit_form.submit, {'attr': {'class': 'btn btn-primary btn-sm custom-btn'}, 'label': 'UPDATE'})}}
+  <a href="{{ path('post') }}" class="btn btn-primary btn-sm custom-btn">CANCEL</a>
+</div>
+{{form_end(edit_form)}}
 {% endblock %}
