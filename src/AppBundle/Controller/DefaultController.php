@@ -8,14 +8,22 @@ use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
-    /**
-     * @Route("/", name="homepage")
-     */
-    public function indexAction(Request $request)
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', array(
-            'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..'),
-        ));
-    }
+  /**
+  * @Route("/", name="homepage")
+  */
+  public function indexAction(Request $request)
+  {
+    $em = $this->getDoctrine()->getManager();
+
+    $dql   = "SELECT a FROM OpenSourceFeedBundle:Post a";
+    $query = $em->createQuery($dql);
+
+    $paginator  = $this->get('knp_paginator');
+    $pagination = $paginator->paginate($query,
+    $request->query->getInt('page', 1),
+    4
+  );
+
+  return $this->render('OpenSourceFeedBundle:Default:index.html.twig', array('pagination' => $pagination));
+}
 }

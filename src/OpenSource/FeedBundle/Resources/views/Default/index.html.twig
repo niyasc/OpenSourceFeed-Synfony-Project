@@ -1,1 +1,35 @@
-Hello {{ name }}!
+{% extends '::base.html.twig' %}
+{% block content %}
+
+{% for entity in pagination %}
+{% if loop.index0 % 2 == 0 %}
+<div class="row">
+{% endif %}
+<div class="col-sm-6">
+  <div class="post-thumbnail">
+
+
+    <h3><a href="{{ path('post_show', { 'id': entity.id, 'slug': entity.slug }) }}">{{ entity.title }}</a></h3>
+
+    <div class="post-meta">
+      <span class="post-date">
+        {% if entity.date %}{{ entity.date|date('Y-m-d') }}{% endif %}
+      </span>
+      <span class="post-category">
+        /{{entity.category}}
+      </span>
+    </div>
+    <div class="post-text">
+      {{ (entity.preText ~ entity.summary)|length > 200 ? (entity.preText ~ entity.summary)|slice(0, 200) ~ '...' : (entity.preText ~ entity.summary) }}
+    </div>
+  </div>
+</div>
+{% if loop.index0 % 2 == 1 or loop.index == pagination.count %}
+</div>
+{% endif %}
+{% endfor %}
+
+<div class="navigation">
+  {{ knp_pagination_render(pagination) }}
+</div>
+{% endblock %}
