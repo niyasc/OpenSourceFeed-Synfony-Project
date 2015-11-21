@@ -11,3 +11,7 @@ services:
         class: AppBundle\Handler\LogoutSuccessHandler
         calls:
             - [ setContainer, [ @service_container ] ]
+    feedprovider:
+        class: OpenSource\FeedBundle\Controller\FeedController
+        calls:
+            - [ setContainer, [ @service_container ] ]
