@@ -8,3 +8,5 @@ app:
     type:     annotation
 logout:
     path: /logout
+feedio:
+    resource: @DebrilRssAtomBundle/Resources/config/routing.xml

@@ -501,6 +501,26 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // feed_stream
+        if (0 === strpos($pathinfo, '/stream') && preg_match('#^/stream(?:/(?P<id>[^/]++))?$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'feed_stream')), array (  '_controller' => 'Debril\\RssAtomBundle\\Controller\\StreamController::indexAction',  'id' => 'null',));
+        }
+
+        // feed_atom
+        if (0 === strpos($pathinfo, '/atom') && preg_match('#^/atom(?:/(?P<id>[^/]++))?$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'feed_atom')), array (  '_controller' => 'Debril\\RssAtomBundle\\Controller\\StreamController::indexAction',  'format' => 'atom',  'id' => 'null',));
+        }
+
+        // feed_rss
+        if (0 === strpos($pathinfo, '/rss') && preg_match('#^/rss(?:/(?P<id>[^/]++))?$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'feed_rss')), array (  '_controller' => 'Debril\\RssAtomBundle\\Controller\\StreamController::indexAction',  'format' => 'rss',  'id' => 'null',));
+        }
+
+        // mock_feed_rss
+        if (0 === strpos($pathinfo, '/mock/rss') && preg_match('#^/mock/rss(?:/(?P<id>[^/]++))?$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'mock_feed_rss')), array (  '_controller' => 'Debril\\RssAtomBundle\\Controller\\StreamController::indexAction',  'format' => 'rss',  'source' => 'debril.provider.mock',  'id' => 'null',));
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }

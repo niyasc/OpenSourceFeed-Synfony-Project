@@ -54,6 +54,16 @@ class appDevDebugProjectContainer extends Container
             'data_collector.form.extractor' => 'getDataCollector_Form_ExtractorService',
             'data_collector.request' => 'getDataCollector_RequestService',
             'data_collector.router' => 'getDataCollector_RouterService',
+            'debril.formatter.atom' => 'getDebril_Formatter_AtomService',
+            'debril.formatter.rss' => 'getDebril_Formatter_RssService',
+            'debril.http.curl' => 'getDebril_Http_CurlService',
+            'debril.parser.atom' => 'getDebril_Parser_AtomService',
+            'debril.parser.factory' => 'getDebril_Parser_FactoryService',
+            'debril.parser.rdf' => 'getDebril_Parser_RdfService',
+            'debril.parser.rss' => 'getDebril_Parser_RssService',
+            'debril.provider.default' => 'getDebril_Provider_DefaultService',
+            'debril.provider.mock' => 'getDebril_Provider_MockService',
+            'debril.reader' => 'getDebril_ReaderService',
             'debug.controller_resolver' => 'getDebug_ControllerResolverService',
             'debug.debug_handlers_listener' => 'getDebug_DebugHandlersListenerService',
             'debug.dump_listener' => 'getDebug_DumpListenerService',
@@ -511,6 +521,159 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the 'debril.formatter.atom' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Debril\RssAtomBundle\Protocol\Formatter\FeedAtomFormatter A Debril\RssAtomBundle\Protocol\Formatter\FeedAtomFormatter instance.
+     */
+    protected function getDebril_Formatter_AtomService()
+    {
+        return $this->services['debril.formatter.atom'] = new \Debril\RssAtomBundle\Protocol\Formatter\FeedAtomFormatter();
+    }
+
+    /**
+     * Gets the 'debril.formatter.rss' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Debril\RssAtomBundle\Protocol\Formatter\FeedRssFormatter A Debril\RssAtomBundle\Protocol\Formatter\FeedRssFormatter instance.
+     */
+    protected function getDebril_Formatter_RssService()
+    {
+        return $this->services['debril.formatter.rss'] = new \Debril\RssAtomBundle\Protocol\Formatter\FeedRssFormatter();
+    }
+
+    /**
+     * Gets the 'debril.http.curl' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Debril\RssAtomBundle\Driver\HttpCurlDriver A Debril\RssAtomBundle\Driver\HttpCurlDriver instance.
+     */
+    protected function getDebril_Http_CurlService()
+    {
+        return $this->services['debril.http.curl'] = new \Debril\RssAtomBundle\Driver\HttpCurlDriver();
+    }
+
+    /**
+     * Gets the 'debril.parser.atom' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Debril\RssAtomBundle\Protocol\Parser\AtomParser A Debril\RssAtomBundle\Protocol\Parser\AtomParser instance.
+     */
+    protected function getDebril_Parser_AtomService()
+    {
+        $this->services['debril.parser.atom'] = $instance = new \Debril\RssAtomBundle\Protocol\Parser\AtomParser();
+
+        $instance->setDateFormats(array(0 => 'Y-m-d\\TH:i:sP', 1 => 'D, d M Y H:i:s O', 2 => 'Y-m-d\\TH:i:sP', 3 => 'Y-m-d\\TH:i:s.uP', 4 => 'Y-m-d', 5 => 'd/m/Y'));
+
+        return $instance;
+    }
+
+    /**
+     * Gets the 'debril.parser.factory' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Debril\RssAtomBundle\Protocol\Parser\Factory A Debril\RssAtomBundle\Protocol\Parser\Factory instance.
+     */
+    protected function getDebril_Parser_FactoryService()
+    {
+        $this->services['debril.parser.factory'] = $instance = new \Debril\RssAtomBundle\Protocol\Parser\Factory();
+
+        $instance->setFeedClass('Debril\\RssAtomBundle\\Protocol\\Parser\\FeedContent');
+        $instance->setItemClass('Debril\\RssAtomBundle\\Protocol\\Parser\\Item');
+
+        return $instance;
+    }
+
+    /**
+     * Gets the 'debril.parser.rdf' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Debril\RssAtomBundle\Protocol\Parser\RdfParser A Debril\RssAtomBundle\Protocol\Parser\RdfParser instance.
+     */
+    protected function getDebril_Parser_RdfService()
+    {
+        $this->services['debril.parser.rdf'] = $instance = new \Debril\RssAtomBundle\Protocol\Parser\RdfParser();
+
+        $instance->setDateFormats(array(0 => 'Y-m-d\\TH:i:sP', 1 => 'D, d M Y H:i:s O', 2 => 'Y-m-d\\TH:i:sP', 3 => 'Y-m-d\\TH:i:s.uP', 4 => 'Y-m-d', 5 => 'd/m/Y'));
+
+        return $instance;
+    }
+
+    /**
+     * Gets the 'debril.parser.rss' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Debril\RssAtomBundle\Protocol\Parser\RssParser A Debril\RssAtomBundle\Protocol\Parser\RssParser instance.
+     */
+    protected function getDebril_Parser_RssService()
+    {
+        $this->services['debril.parser.rss'] = $instance = new \Debril\RssAtomBundle\Protocol\Parser\RssParser();
+
+        $instance->setDateFormats(array(0 => 'Y-m-d\\TH:i:sP', 1 => 'D, d M Y H:i:s O', 2 => 'Y-m-d\\TH:i:sP', 3 => 'Y-m-d\\TH:i:s.uP', 4 => 'Y-m-d', 5 => 'd/m/Y'));
+
+        return $instance;
+    }
+
+    /**
+     * Gets the 'debril.provider.default' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \OpenSource\FeedBundle\Controller\FeedController A OpenSource\FeedBundle\Controller\FeedController instance.
+     */
+    protected function getDebril_Provider_DefaultService()
+    {
+        return $this->services['debril.provider.default'] = new \OpenSource\FeedBundle\Controller\FeedController($this->get('doctrine'));
+    }
+
+    /**
+     * Gets the 'debril.provider.mock' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Debril\RssAtomBundle\Provider\MockProvider A Debril\RssAtomBundle\Provider\MockProvider instance.
+     */
+    protected function getDebril_Provider_MockService()
+    {
+        return $this->services['debril.provider.mock'] = new \Debril\RssAtomBundle\Provider\MockProvider();
+    }
+
+    /**
+     * Gets the 'debril.reader' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Debril\RssAtomBundle\Protocol\FeedReader A Debril\RssAtomBundle\Protocol\FeedReader instance.
+     */
+    protected function getDebril_ReaderService()
+    {
+        $this->services['debril.reader'] = $instance = new \Debril\RssAtomBundle\Protocol\FeedReader($this->get('debril.http.curl'), $this->get('debril.parser.factory'));
+
+        $instance->addParser($this->get('debril.parser.rss'));
+        $instance->addParser($this->get('debril.parser.rdf'));
+        $instance->addParser($this->get('debril.parser.atom'));
+
+        return $instance;
+    }
+
+    /**
      * Gets the 'debug.controller_resolver' service.
      *
      * This service is shared.
@@ -656,7 +819,7 @@ class appDevDebugProjectContainer extends Container
         $c = new \Symfony\Bridge\Doctrine\ContainerAwareEventManager($this);
         $c->addEventListener(array(0 => 'loadClassMetadata'), $this->get('doctrine.orm.default_listeners.attach_entity_listeners'));
 
-        return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('driver' => 'pdo_mysql', 'host' => '127.0.0.1', 'port' => NULL, 'dbname' => 'symfony', 'user' => 'root', 'password' => NULL, 'charset' => 'UTF8', 'driverOptions' => array()), $b, $c, array());
+        return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('driver' => 'pdo_mysql', 'host' => '127.0.0.1', 'port' => NULL, 'dbname' => 'symfony', 'user' => 'root', 'password' => NULL, 'charset' => 'UTF8', 'driverOptions' => array(), 'defaultTableOptions' => array()), $b, $c, array());
     }
 
     /**
@@ -1926,9 +2089,9 @@ class appDevDebugProjectContainer extends Container
         $instance->add($this->get('data_collector.router'));
         $instance->add($this->get('data_collector.form'));
         $instance->add(new \Symfony\Bridge\Twig\DataCollector\TwigDataCollector($this->get('twig.profile')));
+        $instance->add($d);
         $instance->add(new \Symfony\Bundle\SecurityBundle\DataCollector\SecurityDataCollector($this->get('security.token_storage', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('security.role_hierarchy')));
         $instance->add(new \Symfony\Bundle\SwiftmailerBundle\DataCollector\MessageDataCollector($this));
-        $instance->add($d);
         $instance->add($this->get('data_collector.dump'));
 
         return $instance;
@@ -2184,7 +2347,7 @@ class appDevDebugProjectContainer extends Container
 
         $m = new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($e, $i, '/login', false);
 
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($h, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $this->get('security.user.provider.concrete.in_memory')), 'main', $a, $c), 2 => $j, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $f, new \Symfony\Component\Security\Http\Session\SessionAuthenticationStrategy('migrate'), $i, 'main', $k, $l, array('check_path' => '/login_check', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $a, $c, NULL), 4 => new \Symfony\Component\Security\Http\Firewall\BasicAuthenticationListener($b, $f, 'main', $m, $a), 5 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '564629fbeccfe5.38525233', $a, $f), 6 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $h, $f)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $i, 'main', $m, NULL, NULL, $a, false));
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($h, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $this->get('security.user.provider.concrete.in_memory')), 'main', $a, $c), 2 => $j, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $f, new \Symfony\Component\Security\Http\Session\SessionAuthenticationStrategy('migrate'), $i, 'main', $k, $l, array('check_path' => '/login_check', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $a, $c, NULL), 4 => new \Symfony\Component\Security\Http\Firewall\BasicAuthenticationListener($b, $f, 'main', $m, $a), 5 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '5650a76988c859.15734516', $a, $f), 6 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $h, $f)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $i, 'main', $m, NULL, NULL, $a, false));
     }
 
     /**
@@ -3397,7 +3560,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getWebProfiler_Controller_ProfilerService()
     {
-        return $this->services['web_profiler.controller.profiler'] = new \Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController($this->get('router', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('profiler', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('twig'), array('data_collector.config' => array(0 => 'config', 1 => '@WebProfiler/Collector/config.html.twig'), 'data_collector.request' => array(0 => 'request', 1 => '@WebProfiler/Collector/request.html.twig'), 'data_collector.ajax' => array(0 => 'ajax', 1 => '@WebProfiler/Collector/ajax.html.twig'), 'data_collector.exception' => array(0 => 'exception', 1 => '@WebProfiler/Collector/exception.html.twig'), 'data_collector.events' => array(0 => 'events', 1 => '@WebProfiler/Collector/events.html.twig'), 'data_collector.logger' => array(0 => 'logger', 1 => '@WebProfiler/Collector/logger.html.twig'), 'data_collector.time' => array(0 => 'time', 1 => '@WebProfiler/Collector/time.html.twig'), 'data_collector.memory' => array(0 => 'memory', 1 => '@WebProfiler/Collector/memory.html.twig'), 'data_collector.router' => array(0 => 'router', 1 => '@WebProfiler/Collector/router.html.twig'), 'data_collector.form' => array(0 => 'form', 1 => '@WebProfiler/Collector/form.html.twig'), 'data_collector.twig' => array(0 => 'twig', 1 => '@WebProfiler/Collector/twig.html.twig'), 'data_collector.security' => array(0 => 'security', 1 => '@Security/Collector/security.html.twig'), 'swiftmailer.data_collector' => array(0 => 'swiftmailer', 1 => '@Swiftmailer/Collector/swiftmailer.html.twig'), 'data_collector.doctrine' => array(0 => 'db', 1 => '@Doctrine/Collector/db.html.twig'), 'data_collector.dump' => array(0 => 'dump', 1 => '@Debug/Profiler/dump.html.twig')), 'bottom');
+        return $this->services['web_profiler.controller.profiler'] = new \Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController($this->get('router', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('profiler', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('twig'), array('data_collector.config' => array(0 => 'config', 1 => '@WebProfiler/Collector/config.html.twig'), 'data_collector.request' => array(0 => 'request', 1 => '@WebProfiler/Collector/request.html.twig'), 'data_collector.ajax' => array(0 => 'ajax', 1 => '@WebProfiler/Collector/ajax.html.twig'), 'data_collector.exception' => array(0 => 'exception', 1 => '@WebProfiler/Collector/exception.html.twig'), 'data_collector.events' => array(0 => 'events', 1 => '@WebProfiler/Collector/events.html.twig'), 'data_collector.logger' => array(0 => 'logger', 1 => '@WebProfiler/Collector/logger.html.twig'), 'data_collector.time' => array(0 => 'time', 1 => '@WebProfiler/Collector/time.html.twig'), 'data_collector.memory' => array(0 => 'memory', 1 => '@WebProfiler/Collector/memory.html.twig'), 'data_collector.router' => array(0 => 'router', 1 => '@WebProfiler/Collector/router.html.twig'), 'data_collector.form' => array(0 => 'form', 1 => '@WebProfiler/Collector/form.html.twig'), 'data_collector.twig' => array(0 => 'twig', 1 => '@WebProfiler/Collector/twig.html.twig'), 'data_collector.doctrine' => array(0 => 'db', 1 => '@Doctrine/Collector/db.html.twig'), 'data_collector.security' => array(0 => 'security', 1 => '@Security/Collector/security.html.twig'), 'swiftmailer.data_collector' => array(0 => 'swiftmailer', 1 => '@Swiftmailer/Collector/swiftmailer.html.twig'), 'data_collector.dump' => array(0 => 'dump', 1 => '@Debug/Profiler/dump.html.twig')), 'bottom');
     }
 
     /**
@@ -3532,7 +3695,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_Authentication_ManagerService()
     {
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('security.user.provider.concrete.in_memory'), new \Symfony\Component\Security\Core\User\UserChecker(), 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('564629fbeccfe5.38525233')), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('security.user.provider.concrete.in_memory'), new \Symfony\Component\Security\Core\User\UserChecker(), 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('5650a76988c859.15734516')), true);
 
         $instance->setEventDispatcher($this->get('debug.event_dispatcher'));
 
@@ -3753,6 +3916,7 @@ class appDevDebugProjectContainer extends Container
                 'AppBundle' => 'AppBundle\\AppBundle',
                 'OpenSourceFeedBundle' => 'OpenSource\\FeedBundle\\OpenSourceFeedBundle',
                 'KnpPaginatorBundle' => 'Knp\\Bundle\\PaginatorBundle\\KnpPaginatorBundle',
+                'DebrilRssAtomBundle' => 'Debril\\RssAtomBundle\\DebrilRssAtomBundle',
                 'DebugBundle' => 'Symfony\\Bundle\\DebugBundle\\DebugBundle',
                 'WebProfilerBundle' => 'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle',
                 'SensioDistributionBundle' => 'Sensio\\Bundle\\DistributionBundle\\SensioDistributionBundle',
@@ -4179,18 +4343,12 @@ class appDevDebugProjectContainer extends Container
             'assetic.request_listener.class' => 'Symfony\\Bundle\\AsseticBundle\\EventListener\\RequestListener',
             'doctrine_cache.apc.class' => 'Doctrine\\Common\\Cache\\ApcCache',
             'doctrine_cache.array.class' => 'Doctrine\\Common\\Cache\\ArrayCache',
+            'doctrine_cache.chain.class' => 'Doctrine\\Common\\Cache\\ChainCache',
+            'doctrine_cache.couchbase.class' => 'Doctrine\\Common\\Cache\\CouchbaseCache',
+            'doctrine_cache.couchbase.connection.class' => 'Couchbase',
+            'doctrine_cache.couchbase.hostnames' => 'localhost:8091',
             'doctrine_cache.file_system.class' => 'Doctrine\\Common\\Cache\\FilesystemCache',
             'doctrine_cache.php_file.class' => 'Doctrine\\Common\\Cache\\PhpFileCache',
-            'doctrine_cache.mongodb.class' => 'Doctrine\\Common\\Cache\\MongoDBCache',
-            'doctrine_cache.mongodb.collection.class' => 'MongoCollection',
-            'doctrine_cache.mongodb.connection.class' => 'MongoClient',
-            'doctrine_cache.mongodb.server' => 'localhost:27017',
-            'doctrine_cache.riak.class' => 'Doctrine\\Common\\Cache\\RiakCache',
-            'doctrine_cache.riak.bucket.class' => 'Riak\\Bucket',
-            'doctrine_cache.riak.connection.class' => 'Riak\\Connection',
-            'doctrine_cache.riak.bucket_property_list.class' => 'Riak\\BucketPropertyList',
-            'doctrine_cache.riak.host' => 'localhost',
-            'doctrine_cache.riak.port' => 8087,
             'doctrine_cache.memcache.class' => 'Doctrine\\Common\\Cache\\MemcacheCache',
             'doctrine_cache.memcache.connection.class' => 'Memcache',
             'doctrine_cache.memcache.host' => 'localhost',
@@ -4199,13 +4357,23 @@ class appDevDebugProjectContainer extends Container
             'doctrine_cache.memcached.connection.class' => 'Memcached',
             'doctrine_cache.memcached.host' => 'localhost',
             'doctrine_cache.memcached.port' => 11211,
+            'doctrine_cache.mongodb.class' => 'Doctrine\\Common\\Cache\\MongoDBCache',
+            'doctrine_cache.mongodb.collection.class' => 'MongoCollection',
+            'doctrine_cache.mongodb.connection.class' => 'MongoClient',
+            'doctrine_cache.mongodb.server' => 'localhost:27017',
             'doctrine_cache.redis.class' => 'Doctrine\\Common\\Cache\\RedisCache',
             'doctrine_cache.redis.connection.class' => 'Redis',
             'doctrine_cache.redis.host' => 'localhost',
             'doctrine_cache.redis.port' => 6379,
-            'doctrine_cache.couchbase.class' => 'Doctrine\\Common\\Cache\\CouchbaseCache',
-            'doctrine_cache.couchbase.connection.class' => 'Couchbase',
-            'doctrine_cache.couchbase.hostnames' => 'localhost:8091',
+            'doctrine_cache.riak.class' => 'Doctrine\\Common\\Cache\\RiakCache',
+            'doctrine_cache.riak.bucket.class' => 'Riak\\Bucket',
+            'doctrine_cache.riak.connection.class' => 'Riak\\Connection',
+            'doctrine_cache.riak.bucket_property_list.class' => 'Riak\\BucketPropertyList',
+            'doctrine_cache.riak.host' => 'localhost',
+            'doctrine_cache.riak.port' => 8087,
+            'doctrine_cache.sqlite3.class' => 'Doctrine\\Common\\Cache\\SQLite3Cache',
+            'doctrine_cache.sqlite3.connection.class' => 'SQLite3',
+            'doctrine_cache.void.class' => 'Doctrine\\Common\\Cache\\VoidCache',
             'doctrine_cache.wincache.class' => 'Doctrine\\Common\\Cache\\WinCacheCache',
             'doctrine_cache.xcache.class' => 'Doctrine\\Common\\Cache\\XcacheCache',
             'doctrine_cache.zenddata.class' => 'Doctrine\\Common\\Cache\\ZendDataCache',
@@ -4295,6 +4463,28 @@ class appDevDebugProjectContainer extends Container
             'knp_paginator.template.filtration' => 'KnpPaginatorBundle:Pagination:filtration.html.twig',
             'knp_paginator.template.sortable' => 'KnpPaginatorBundle:Pagination:sortable_link.html.twig',
             'knp_paginator.page_range' => 5,
+            'debril.parser.rss.class' => 'Debril\\RssAtomBundle\\Protocol\\Parser\\RssParser',
+            'debril.parser.rdf.class' => 'Debril\\RssAtomBundle\\Protocol\\Parser\\RdfParser',
+            'debril.parser.atom.class' => 'Debril\\RssAtomBundle\\Protocol\\Parser\\AtomParser',
+            'debril.parser.factory.class' => 'Debril\\RssAtomBundle\\Protocol\\Parser\\Factory',
+            'debril.parser.feed.class' => 'Debril\\RssAtomBundle\\Protocol\\Parser\\FeedContent',
+            'debril.parser.item.class' => 'Debril\\RssAtomBundle\\Protocol\\Parser\\Item',
+            'debril.reader.class' => 'Debril\\RssAtomBundle\\Protocol\\FeedReader',
+            'debril.formatter.rss.class' => 'Debril\\RssAtomBundle\\Protocol\\Formatter\\FeedRssFormatter',
+            'debril.formatter.atom.class' => 'Debril\\RssAtomBundle\\Protocol\\Formatter\\FeedAtomFormatter',
+            'debril.http.curl.class' => 'Debril\\RssAtomBundle\\Driver\\HttpCurlDriver',
+            'debril.provider.mock.class' => 'Debril\\RssAtomBundle\\Provider\\MockProvider',
+            'debril.provider.default.class' => 'Debril\\RssAtomBundle\\Provider\\MockProvider',
+            'debril.provider.doctrine.class' => 'Debril\\RssAtomBundle\\Provider\\DoctrineFeedContentProvider',
+            'debril_rss_atom.date_formats' => array(
+                0 => 'Y-m-d\\TH:i:sP',
+                1 => 'D, d M Y H:i:s O',
+                2 => 'Y-m-d\\TH:i:sP',
+                3 => 'Y-m-d\\TH:i:s.uP',
+                4 => 'Y-m-d',
+                5 => 'd/m/Y',
+            ),
+            'debril_rss_atom.private_feeds' => false,
             'web_profiler.controller.profiler.class' => 'Symfony\\Bundle\\WebProfilerBundle\\Controller\\ProfilerController',
             'web_profiler.controller.router.class' => 'Symfony\\Bundle\\WebProfilerBundle\\Controller\\RouterController',
             'web_profiler.controller.exception.class' => 'Symfony\\Bundle\\WebProfilerBundle\\Controller\\ExceptionController',
@@ -4353,6 +4543,10 @@ class appDevDebugProjectContainer extends Container
                     0 => 'twig',
                     1 => '@WebProfiler/Collector/twig.html.twig',
                 ),
+                'data_collector.doctrine' => array(
+                    0 => 'db',
+                    1 => '@Doctrine/Collector/db.html.twig',
+                ),
                 'data_collector.security' => array(
                     0 => 'security',
                     1 => '@Security/Collector/security.html.twig',
@@ -4360,10 +4554,6 @@ class appDevDebugProjectContainer extends Container
                 'swiftmailer.data_collector' => array(
                     0 => 'swiftmailer',
                     1 => '@Swiftmailer/Collector/swiftmailer.html.twig',
-                ),
-                'data_collector.doctrine' => array(
-                    0 => 'db',
-                    1 => '@Doctrine/Collector/db.html.twig',
                 ),
                 'data_collector.dump' => array(
                     0 => 'dump',

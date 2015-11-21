@@ -19,6 +19,7 @@ class AppKernel extends Kernel
       new AppBundle\AppBundle(),
       new OpenSource\FeedBundle\OpenSourceFeedBundle(),
       new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+      new Debril\RssAtomBundle\DebrilRssAtomBundle(),
     );
 
     if (in_array($this->getEnvironment(), array('dev', 'test'))) {
